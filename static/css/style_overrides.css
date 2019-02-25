@@ -1,0 +1,14 @@
+/* color override to correspond to the logo green */
+.green.darken-3 {
+  background-color: #2E7148 !important;
+}
+
+/* text justification for p elements */
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+p.italic {
+    font-style: italic;
+}

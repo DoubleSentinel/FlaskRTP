@@ -1,0 +1,78 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="section white">
+  <div class="row container">
+    <div class="col s12 m12 l6">
+        <h2 class="header">Voir sans déranger</h2>
+        <p class="flow-text grey-text text-darken-3 lighten-3 italic">
+            L’unique hôtel flottant des Pangalanes vient d’être construit en bois de pin
+            recouvert de fibre : un bateau confortable pour huit passagers et quatre membres d’équipage.
+        </p>
+    </div>
+    <div class="col s12 m12 l6">
+        <div class="video-container">
+            <iframe width="1901" height="800"
+              src="https://www.youtube.com/embed/wsOn-XKfR5U?autoplay=1&mute=1&loop=1"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="parallax-container">
+      <div class="parallax"><img src="{{ url_for('static', filename='images/boat1.jpg') }}"></div>
+</div>
+
+<div class="section white">
+  <div class="row container">
+      <p class="flow-text grey-text text-darken-3 lighten-3 italic">
+          La meilleure manière de visiter les Pangalanes est le bateau.
+          Le seul en service actuellement, terminé en 2016, s’y prête admirablement,
+          conçu à la mesure des lieux, offrant à ses huit passagers l’intimité de ses cabines,
+          la convivialité de repas soignés et la proximité avec une population indigène
+          vivant dans l’état de nature.
+      </p>
+      <p class="flow-text grey-text text-darken-3 lighten-3 italic">
+          Chacune des quatre cabines du bateau, accessible par un escalier, compte des lits
+          jumeaux et des sanitaires avec douche WC et lavabo. Le pont couvert permet à une cuisinière,
+          formée à la gastronomie malgache et française, d’exercer son talent avec un soin particulier
+          pour les produits locaux et dans le strict respect de l’art de la table.
+      </p>
+      <p class="flow-text grey-text text-darken-3 lighten-3 italic">
+        La seule vision du canal et de ses rives suffirait à enchanter le passager.
+        Mais le décor offre bien d’autres attraits: la visite d’une réserve ou d’une plantation,
+        une baignade rafraîchissante, une partie de pêche, le spectacle improvisé d’une danse villageoise
+        ou d’une chorale, l’occasion d’acheter à prix modique les produits d’un artisanat dont chaque
+        communauté s’est fait une spécialité différente, tout en s’imprégnant de l’odeur des épices séchant au soleil.
+      </p>
+  </div>
+</div>
+
+<div class="parallax-container">
+      <div class="parallax"><img src="{{ url_for('static', filename='images/boat2.jpg') }}"></div>
+</div>
+
+<div class="section white">
+  <div class="row container">
+      <p class="flow-text grey-text text-darken-3 lighten-3">
+          La végétation luxuriante est spécialement belle sur cette côte est de
+          Madagascar bordant le canal. Des réserves recelant de précieux endémismes,
+          tant végétaux qu’animaux (lémuriens, tortues, caméléons etc…) sont
+          visitables sous la conduite de guides.
+      </p>
+      <p class="flow-text grey-text text-darken-3 lighten-3">
+          L’océan Indien tout proche élargit soudainement l’horizon quelques fois
+          proche du canal de quelques dizaines de mètres offrant la possibilité
+          des belles balades dans un décor à couper le souffle.
+      </p>
+  </div>
+</div>
+
+<div class="parallax-container">
+      <div class="parallax"><img src="{{ url_for('static', filename='images/boat3.jpg') }}"></div>
+</div>
+
+{% endblock %}

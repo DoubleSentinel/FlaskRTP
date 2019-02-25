@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- link Google Fonts -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='materialize/fonts/font.css') }}">
+    <!-- Materialize core CSS -->
+    <link rel="stylesheet" type='text/css' media="screen,projection"
+          href="{{ url_for('static', filename='materialize/css/materialize.css') }}">
+
+    <!-- Personalized CSS import -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_overrides.css') }}">
+
+    <!-- JS imports -->
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='materialize/js/materialize.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='materialize/js/initialize.js') }}"></script>
+
+    <title>{% block window_title%}Croisières de luxe sur le Canal des Pangalanes Madagascar{% endblock %}</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-wrapper green darken-3 row">
+          <div class="brand-logo center">
+            <img class="responsive-img" src="{{ url_for('static', filename='images/RTP-logo-small.png') }}">
+            <a href="{{ url_for('index') }}">Reine Tina Madagascar</a>
+          </div>
+        </div>
+    </nav>
+<!-- Page Content -->
+    {% block content %}
+    <!-- content from other template-->
+    {% endblock %}
+</body>
+
+
+</html>
