@@ -2,77 +2,119 @@
 {% block content %}
 <div class="section white">
   <div class="row container">
+    <div class="col s12 m12 l12">
+        <h3 class="header grey-text text-darken-3 italic center underlined col s12 m12 l12">
+          Bienvenue sur « Le Reine Tina »
+        </h3>
+        <h4 class="header grey-text text-darken-3 italic center col s12 m12 l12">
+          Bateau de croisière sur le canal des Pangalanes, Madagascar
+        </h4>
+    </div>
+  </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax">
+      <img src="{{ url_for('static', filename='media/images/IMG_0209.JPG') }}">
+    </div>
+</div>
+
+<div class="section white">
+  <div class="row container">
     <div class="col s12 m12 l6">
-        <h2 class="header">Voir sans déranger</h2>
-        <p class="flow-text grey-text text-darken-3 lighten-3 italic">
-            L’unique hôtel flottant des Pangalanes vient d’être construit en bois de pin
-            recouvert de fibre : un bateau confortable pour huit passagers et quatre membres d’équipage.
-        </p>
+      <h4 class="header italic">
+        Visiter en douceur
+      </h4>
+      <p class="flow-text grey-text text-darken-3 lighten-3 italic justify">
+        L’unique hôtel flottant du canal des Pangalanes. Bateau confortable pour huit passagers.
+      </p>
     </div>
     <div class="col s12 m12 l6">
-        <div class="video-container">
+      <div class="video-container">
+        <video width="600" height="300" autoplay muted controls>
+          <source src="{{ url_for('static', filename='media/videos/rtd-drone-air-mad.mp4') }}"
+          type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+      </div>
+        <!--<div class="video-container">
             <iframe width="1901" height="800"
               src="https://www.youtube.com/embed/wsOn-XKfR5U?autoplay=1&mute=1&loop=1"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
-        </div>
+            <!--<a class="weatherwidget-io" href="https://forecast7.com/fr/n18d1449d40/toamasina/"
+            data-label_1="TOAMASINA"
+            data-theme="original" >TOAMASINA</a>
+            <script>
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+            </script>
+            <!--<iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d1786.1246399868674!2d49.40025761923563!3d-18.165780839673385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d-18.1655655!2d49.401342899999996!5e1!3m2!1sen!2sch!4v1551782065431"
+              width="600"
+              height="450"
+              frameborder="0"
+              style="border:0"
+              allowfullscreen>
+            </iframe>-->
     </div>
   </div>
 </div>
 
-<div class="parallax-container">
-      <div class="parallax"><img src="{{ url_for('static', filename='images/boat1.jpg') }}"></div>
+<div class="parallax-container max-container">
+    <div class="parallax">
+      <img src="{{ url_for('static', filename='media/images/IMG_9205.JPG') }}">
+    </div>
 </div>
 
 <div class="section white">
   <div class="row container">
-      <p class="flow-text grey-text text-darken-3 lighten-3 italic">
+    <div class="col s12 m6 l6">
+      <p class="flow-text grey-text text-darken-3 lighten-3 italic justify">
           La meilleure manière de visiter les Pangalanes est le bateau.
-          Le seul en service actuellement, terminé en 2016, s’y prête admirablement,
-          conçu à la mesure des lieux, offrant à ses huit passagers l’intimité de ses cabines,
+          Le seul en service actuellement , terminé, s’y prête admirablement.
+          Conçu à la mesure des lieux, offrant à ses huit passagers l’intimité de ses cabines,
           la convivialité de repas soignés et la proximité avec une population indigène
-          vivant dans l’état de nature.
+          vivant de ses propres ressources.
       </p>
-      <p class="flow-text grey-text text-darken-3 lighten-3 italic">
-          Chacune des quatre cabines du bateau, accessible par un escalier, compte des lits
-          jumeaux et des sanitaires avec douche WC et lavabo. Le pont couvert permet à une cuisinière,
-          formée à la gastronomie malgache et française, d’exercer son talent avec un soin particulier
-          pour les produits locaux et dans le strict respect de l’art de la table.
+      <p class="flow-text grey-text text-darken-3 lighten-3 italic justify">
+          La cuisinière du bord maîtrise non seulement la gastronomie malgache
+          mais également l’art français de la table, vouant un soin particulier
+          aux produits locaux et à leur mise en valeur. La seule vision du canal
+          et de ses rives suffirait à enchanter le passager. Mais le décor offre
+          bien d’autres attraits: baignade rafraichissantes, parties de pêche,
+          spectacles de danses villageoises, chorales improvisées, marchés artisanaux,
+          visites de plantations… et l’odeur des épices séchant au soleil.
       </p>
-      <p class="flow-text grey-text text-darken-3 lighten-3 italic">
-        La seule vision du canal et de ses rives suffirait à enchanter le passager.
-        Mais le décor offre bien d’autres attraits: la visite d’une réserve ou d’une plantation,
-        une baignade rafraîchissante, une partie de pêche, le spectacle improvisé d’une danse villageoise
-        ou d’une chorale, l’occasion d’acheter à prix modique les produits d’un artisanat dont chaque
-        communauté s’est fait une spécialité différente, tout en s’imprégnant de l’odeur des épices séchant au soleil.
-      </p>
+    </div>
+    <div class="col s12 m6 l6">
+      <img class="responsive-img" src="{{ url_for('static', filename='media/images/pang-mada-map.jpeg') }}">
+    </div>
   </div>
 </div>
 
-<div class="parallax-container">
-      <div class="parallax"><img src="{{ url_for('static', filename='images/boat2.jpg') }}"></div>
+<div class="parallax-container ">
+    <div class="parallax">
+      <img src="{{ url_for('static', filename='media/images/IMG_9347.JPG') }}">
+    </div>
 </div>
 
 <div class="section white">
   <div class="row container">
-      <p class="flow-text grey-text text-darken-3 lighten-3">
-          La végétation luxuriante est spécialement belle sur cette côte est de
-          Madagascar bordant le canal. Des réserves recelant de précieux endémismes,
-          tant végétaux qu’animaux (lémuriens, tortues, caméléons etc…) sont
-          visitables sous la conduite de guides.
+    <div class="col s12 m12 l6">
+      <p class="flow-text grey-text text-darken-3 lighten-3 italic justify">
+          La végétation est spécialement luxuriante sur la côte orientale de Madagascar
+          bordant le canal.
+          Des réserves naturelles recèlent de rares endémismes ( lémuriens, tortues, caméléons…)
+          Elles peuvent être visitées et des guides compétents sont à disposition.
       </p>
-      <p class="flow-text grey-text text-darken-3 lighten-3">
-          L’océan Indien tout proche élargit soudainement l’horizon quelques fois
-          proche du canal de quelques dizaines de mètres offrant la possibilité
-          des belles balades dans un décor à couper le souffle.
+      <p class="flow-text grey-text text-darken-3 lighten-3 italic justify">
+          L’océan Indien n’est parfois distant que de quelques dizaines de mètres,
+          élargissant soudain l’horizon et offrant la possibilité de belles balades
+          le long d’un rivage intact.
       </p>
+    </div>
   </div>
-</div>
-
-<div class="parallax-container">
-      <div class="parallax"><img src="{{ url_for('static', filename='images/boat3.jpg') }}"></div>
 </div>
 
 {% endblock %}
