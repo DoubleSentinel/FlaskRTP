@@ -29,48 +29,66 @@
 <body>
     <!-- Navbar -->
     <div class="navbar-fixed">
-    <nav>
+      <nav>
         <div class="nav-wrapper green darken-3 row">
-          <div class="brand-logo center">
-            <a href="{{ url_for('index') }}">
-                <img class="responsive-img"
-                     src="{{ url_for('static', filename='media/images/RTP-logo.jpg') }}"
-                     style="height: 64px;">
-            </a>
-          </div>
+          <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <a class="brand-logo center" href="{{ url_for('index') }}">
+              <img class="responsive-img"
+                   src="{{ url_for('static', filename='media/images/RTP-logo.jpg') }}"
+                   height="auto" width="425">
+          </a>
+          <!-- Navigation buttons, hidden on smaller devices -->
+          <ul class="left hide-on-med-and-down">
+            <li><a href="/">Présentation</a></li>
+            <li><a href="/">Médias</a></li>
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/">Offres</a></li>
+            <li><a href="/">Événments</a></li>
+            <li><a href="/">Contacts</a></li>
+          </ul>
         </div>
-    </nav>
+      </nav>
     </div>
+
+    <!-- Mobile navbar -->
+    <ul class="sidenav" id="mobile-navbar" >
+      <li><a href="/">Présentation</a></li>
+      <li><a href="/">Médias</a></li>
+      <li><a href="/">Offres</a></li>
+      <li><a href="/">Événments</a></li>
+      <li><a href="/">Contacts</a></li>
+    </ul>
 <!-- Page Content -->
     {% block content %}
     <!-- content from other template-->
     {% endblock %}
 
-    <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
+    <footer class="page-footer green darken-3">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Footer Content</h5>
+              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              </ul>
             </div>
           </div>
-          <div class="footer-copyright">
-            <div class="container">
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
             © 2014 Copyright Text
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
           </div>
-        </footer>
+        </div>
+    </footer>
 </body>
 
 

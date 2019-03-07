@@ -15,7 +15,7 @@
 
 <div class="parallax-container">
     <div class="parallax">
-      <img src="{{ url_for('static', filename='media/images/IMG_0209.JPG') }}">
+      <img src="{{ url_for('static', filename='media/images/IMG_0209-parallax.JPG') }}">
     </div>
 </div>
 
@@ -31,7 +31,7 @@
     </div>
     <div class="col s12 m12 l6">
       <div class="video-container">
-        <video width="600" height="300" autoplay muted controls>
+        <video class="responsive-video" controls>
           <source src="{{ url_for('static', filename='media/videos/rtd-drone-air-mad.mp4') }}"
           type="video/mp4">
             Your browser does not support the video tag.
@@ -63,7 +63,7 @@
 
 <div class="parallax-container max-container">
     <div class="parallax">
-      <img src="{{ url_for('static', filename='media/images/IMG_9205.JPG') }}">
+      <img src="{{ url_for('static', filename='media/images/IMG_9205-parallax.JPG') }}">
     </div>
 </div>
 
@@ -95,7 +95,7 @@
 
 <div class="parallax-container ">
     <div class="parallax">
-      <img src="{{ url_for('static', filename='media/images/IMG_9347.JPG') }}">
+      <img src="{{ url_for('static', filename='media/images/IMG_9347-parallax.JPG') }}">
     </div>
 </div>
 
@@ -113,6 +113,15 @@
           élargissant soudain l’horizon et offrant la possibilité de belles balades
           le long d’un rivage intact.
       </p>
+    </div>
+    <div class="col s12 m12 l6">
+      <div class="video-container">
+        <video class="responsive-video" controls>
+          <source src="{{ url_for('static', filename='media/videos/rtp-main-page.mov') }}"
+          type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   </div>
 </div>

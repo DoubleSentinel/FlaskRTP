@@ -6,15 +6,6 @@
 .parallax-container {
     height: 750px;
 }
-/*
-.title-logo {
-    height: 64px;
-}*/
-
-/*TODO repair this and use 1000 for image 2 and 750 for others
-.parallax-container, .max-container {
-    height: 1000px;
-}
 
 /* text justification for p elements */
 p.justify {
