@@ -9,3 +9,18 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.sidenav').sidenav();
 });
+
+// initialize dropdown triggers
+$(document).ready(function(){
+  $(".dropdown-trigger").dropdown();
+});
+
+// initialize carousel
+$(document).ready(function(){
+    $('.carousel').carousel();
+  });
+
+// initialize material boxed media
+$(document).ready(function(){
+   $('.materialboxed').materialbox();
+ });

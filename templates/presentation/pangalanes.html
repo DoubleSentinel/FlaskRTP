@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="row container">
+  <!-- carousel section -->
+  <div class="carousel col s12 m12 l12">
+    {% for image in images %}
+    <a class="carousel-item">
+      <img class="materialboxed" width="200px" src="{{ url_for('static', filename=image) }}">
+    </a>
+    {% endfor %}
+  </div>
+
+</div>
+<!-- text section -->
+<div class="row container">
+  <div class="card green darken-3">
+    <div class="card-content white-text">
+      <span class="card-title">
+        <h4 class="header italic">
+          Le canal des Pangalanes
+        </h4>
+      </span>
+      <p class="flow-text white-text italic justify">
+        Ce boulevard aquatique longeant la côte orientale de Madagascar est protégé des vagues par un étroit cordon littoral.
+        Le cabotage dans les eaux malgaches de l’océan Indien est rendu dangereux par la présence de récifs et de courants violents. Afin de pouvoir naviguer à l’abri des vagues, dont le fracas explosif ponctue la rumeur des flots les jours de forte houle, on a relié par des canaux les lagunes qui se succèdent derrière les dunes bordant la côte. De tels travaux sont attestés avant l’époque coloniale déjà. Mais c’est peu après l’arrivée des Français en 1895 que démarre un gigantesque chantier consistant à créer une voie navigable potentiellement longue de 665 km. Le but des colonisateurs était avant tout de faciliter l’exploitation et l’exportation des ressources agricoles et forestières de la côte. En 1901, un premier tronçon est inauguré entre Tamatave et Brickaville. Son creusement a coûté la vie à de nombreux travailleurs emportés par des fièvres ou victimes des crocodiles. Ces derniers, bientôt exterminés, ne subsistent plus que dans certains marais intérieurs. Tandis que se construit un chemin de fer entre Tananarive et Tamatave, le creusement du canal se poursuit en direction du sud, atteignant Varomandry en 1915 et se terminant à Farafangana en 1949. Trop souvent ensablé, encombré de jacinthes d’eau, cet ouvrage ne parvient pas longtemps à résister à la concurrence du rail et de la route. Jamais il ne deviendra le moteur du développement auquel rêvaient ses concepteurs.
+     </p>
+    </div>
+  </div>
+</div>
+<!-- <img class="responsive-img" src="{{ url_for('static', filename='media/images/pang-mada-map.jpeg') }}"> -->
+{% endblock %}

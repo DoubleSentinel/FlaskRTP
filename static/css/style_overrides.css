@@ -4,11 +4,19 @@
   background-color: #23782E !important;
 }
 
+.carousel {
+height: 300px;
+}
+
+.navbar-fixed {
+  z-index: 997;
+}
+
 .parallax-container {
     height: 750px;
 }
 
-/* text justification for p elements */
+/* text based modifications */
 p.justify {
     text-align: justify;
     text-justify: inter-word;
