@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <link rel="shortcut icon" href="favicon.ico">
     <!-- link Google Fonts -->
     <link rel="stylesheet"
@@ -34,18 +33,23 @@
           <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <a class="brand-logo center" href="{{ url_for('index') }}">
               <img class="responsive-img"
-                   src="{{ url_for('static', filename='media/images/RTP-logo.jpg') }}"
-                   height="auto" width="425">
+                   src="{{ url_for('static', filename='media/images/logo-plaquette-.jpg') }}"
+                   height="auto" width="275">
           </a>
           <!-- Navigation buttons, hidden on smaller devices -->
           <ul class="left hide-on-med-and-down">
-            <li><a href="/">Présentation</a></li>
-            <li><a href="/">Médias</a></li>
+            <li class="{{ 'active' if active=='presentation' }}">
+              <a href="{{ url_for('presentation') }}">Présentation</a></li>
+            <li class="{{ 'active' if active=='media' }}">
+              <a href="{{ url_for('media') }}">Médias</a></li>
           </ul>
           <ul class="right hide-on-med-and-down">
-            <li><a href="/">Offres</a></li>
-            <li><a href="/">Événments</a></li>
-            <li><a href="/">Contacts</a></li>
+            <li class="{{ 'active' if active=='circuits' }}">
+              <a href="{{ url_for('circuits') }}">Circuits & Croisières</a></li>
+            <li class="{{ 'active' if active=='events' }}">
+              <a href="{{ url_for('events') }}">Événments</a></li>
+            <li class="{{ 'active' if active=='contact' }}">
+              <a href="{{ url_for('contact') }}">Contacts & Reservations</a></li>
           </ul>
         </div>
       </nav>
@@ -53,11 +57,16 @@
 
     <!-- Mobile navbar -->
     <ul class="sidenav" id="mobile-navbar" >
-      <li><a href="/">Présentation</a></li>
-      <li><a href="/">Médias</a></li>
-      <li><a href="/">Offres</a></li>
-      <li><a href="/">Événments</a></li>
-      <li><a href="/">Contacts</a></li>
+      <li class="{{ 'active' if active=='presentation' }}">
+        <a href="{{ url_for('presentation') }}">Présentation</a></li>
+      <li class="{{ 'active' if active=='media' }}">
+        <a href="{{ url_for('media') }}">Médias</a></li>
+      <li class="{{ 'active' if active=='circuits' }}">
+        <a href="{{ url_for('circuits') }}">Circuits & Croisières</a></li>
+      <li class="{{ 'active' if active=='events' }}">
+        <a href="{{ url_for('events') }}">Événments</a></li>
+      <li class="{{ 'active' if active=='contact' }}">
+        <a href="{{ url_for('contact') }}">Contacts & Reservations</a></li>
     </ul>
 <!-- Page Content -->
     {% block content %}

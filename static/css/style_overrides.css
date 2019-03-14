@@ -1,6 +1,7 @@
 /* color override to correspond to the logo green */
 .green.darken-3 {
-  background-color: #2E7148 !important;
+  /*background-color: #2E7148 !important;*/
+  background-color: #23782E !important;
 }
 
 .parallax-container {
