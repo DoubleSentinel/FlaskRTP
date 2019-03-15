@@ -20,6 +20,12 @@ $(document).ready(function(){
     $('.carousel').carousel();
   });
 
+// initialize carousel-slider fullwidth to true
+$('.carousel.carousel-slider').carousel({
+   fullWidth: true,
+   indicators: true
+ });
+
 // initialize material boxed media
 $(document).ready(function(){
    $('.materialboxed').materialbox();
