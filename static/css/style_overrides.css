@@ -4,6 +4,14 @@
   background-color: #23782E !important;
 }
 
+.card-title.contoured{
+  text-shadow:
+    -2px -2px 1px #000,
+    2px -2px 1px #000,
+    -2px 2px 1px #000,
+    2px 2px 1px #000;
+}
+
 .carousel {
 height: 300px;
 }
@@ -12,7 +20,7 @@ height: 300px;
   z-index: 997;
 }
 
-.parallax-container {
+.parallax-container.large {
     height: 750px;
 }
 

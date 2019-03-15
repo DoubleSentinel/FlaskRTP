@@ -1,3 +1,124 @@
 {% extends "index.html" %}
 {% block content %}
+{% set card_layout = 'col s12 m6 l3' %}
+<div class="container">
+  <div class="row">
+     <div class="card">
+       <div class="card-image">
+         <img class="materialboxed" src="{{ url_for('static', filename='media/images/IMG_0301.jpg') }}">
+       </div>
+       <div class="card-content center row green darken-3 white-text">
+         <div class="col s12 m1 l3 hide-on-small-and-down">
+         </div>
+         <div class="col s12 m10 l6">
+           <h4>Fiche technique</h4>
+           <ul>
+             <li>Longueur : 20 m</li>
+             <li class="divider"></li>
+             <li>Largeur : 4 m</li>
+             <li class="divider"></li>
+             <li>Tirant d’eau : 0,4 m</li>
+             <li class="divider"></li>
+             <li>Tirant d’air : 4.6 m</li>
+             <li class="divider"></li>
+             <li>Poids : env. 16 tonnes</li>
+             <li class="divider"></li>
+             <li>Moteurs : 2 hors-bords Honda 75cv essence à hélices</li>
+             <li class="divider"></li>
+             <li>Génératrice SDMO diesel 6 kWh 220v/380v</li>
+             <li class="divider"></li>
+             <li>4 batteries de service 220 amp. avec convertisseur et panneaux solaires</li>
+           </ul>
+         </div>
+         <div class="col s12 m1 l3 hide-on-small-and-down">
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="row">
+     <div class="{{ card_layout }}">
+       <div class="card">
+         <div class="card-image">
+           <img class="materialboxed" src="{{ url_for('static', filename='media/images/DSCF6176.JPG') }}">
+         </div>
+         <div class="card-content green darken-3 white-text">
+            <p class="justify">4 cabines tout confort avec lits doubles et grands rangements</p>
+         </div>
+       </div>
+     </div>
+     <div class="{{ card_layout }}">
+       <div class="card">
+         <div class="card-image">
+           <img class="materialboxed" src="{{ url_for('static', filename='media/images/DSCF6176.JPG') }}">
+         </div>
+         <div class="card-content green darken-3 white-text">
+           <p class="justify">Sanitaires dans chaque cabine avec douches, WC et lavabos</p>
+         </div>
+       </div>
+     </div>
+     <div class="{{ card_layout }}">
+       <div class="card">
+         <div class="card-image">
+           <img class="materialboxed" src="{{ url_for('static', filename='media/images/DSCF6176.JPG') }}">
+         </div>
+         <div class="card-content green darken-3 white-text">
+           <p class="justify">Boiler capacité 200 litres avec eau tempérée</p>
+         </div>
+       </div>
+     </div>
+     <div class="{{ card_layout }}">
+       <div class="card">
+         <div class="card-image">
+           <img class="materialboxed" src="{{ url_for('static', filename='media/images/DSCF6176.JPG') }}">
+         </div>
+         <div class="card-content green darken-3 white-text">
+           <p class="justify">Cuisine avec réchaud à gaz réfrigérateur et congélateur</p>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="row">
+     <div class="{{ card_layout }}">
+       <div class="card">
+         <div class="card-image">
+           <img class="materialboxed" src="{{ url_for('static', filename='media/images/dscn1114.jpg') }}">
+         </div>
+         <div class="card-content green darken-3 white-text">
+           <p class="justify">Coin repas avec grande table pour 10 personnes</p>
+         </div>
+       </div>
+     </div>
+     <div class="{{ card_layout }}">
+       <div class="card">
+         <div class="card-image">
+           <img class="materialboxed" src="{{ url_for('static', filename='media/images/IMG_4814.JPG') }}">
+         </div>
+         <div class="card-content green darken-3 white-text">
+           <p class="justify">Bar sur le pont</p>
+         </div>
+       </div>
+     </div>
+     <div class="{{ card_layout }}">
+       <div class="card">
+         <div class="card-image">
+           <img class="materialboxed" src="{{ url_for('static', filename='media/images/DSCF6176.JPG') }}">
+         </div>
+         <div class="card-content green darken-3 white-text">
+           <p class="justify">Salon à l’avant du bateau sur le pont avec coin détente et table basse</p>
+         </div>
+       </div>
+     </div>
+     <div class="{{ card_layout }}">
+       <div class="card">
+         <div class="card-image">
+           <img class="materialboxed" src="{{ url_for('static', filename='media/images/DSCF6176.JPG') }}">
+         </div>
+         <div class="card-content green darken-3 white-text">
+           <p class="justify">4 membres d'équipage (Chef cuisinière, capitaine, stewards)</p>
+         </div>
+       </div>
+     </div>
+   </div>
+</div>
+
 {% endblock %}

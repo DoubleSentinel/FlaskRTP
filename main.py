@@ -28,11 +28,11 @@ def presentation():
 
 @app.route('/presentation/pangalanes')
 def pangalanes():
-    images = ["media/images/pangalanes_1.jpg",
-              "media/images/pangalanes_2.jpg",
-              "media/images/pangalanes_3.jpg",
-              "media/images/pangalanes_4.jpg",
-              "media/images/pangalanes_5.jpg"]
+    images = ["media/images/pangalanes/pangalanes_1.jpg",
+              "media/images/pangalanes/pangalanes_2.jpg",
+              "media/images/pangalanes/pangalanes_3.jpg",
+              "media/images/pangalanes/pangalanes_4.jpg",
+              "media/images/pangalanes/pangalanes_5.jpg"]
     return render_template('presentation/pangalanes.html',
             active='presentation', images=images)
 
@@ -42,7 +42,25 @@ def boat():
 
 @app.route('/presentation/goldbook')
 def goldbook():
-    return render_template('presentation/goldbook.html', active='presentation')
+    pages = [
+        ("media/images/goldbook/page1.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page2.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page3.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page4.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page5.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page6.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page7.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page8.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page9.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page10.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page11.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page12.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page13.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page14.jpg", "titre", "descriptif"),
+        ("media/images/goldbook/page15.jpg", "titre", "descriptif")
+        ]
+    return render_template('presentation/goldbook.html',
+            active='presentation', goldbook=pages)
 
 @app.route('/media')
 def media():
