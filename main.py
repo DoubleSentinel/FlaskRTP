@@ -4,7 +4,42 @@ app = Flask( __name__ )
 
 @app.route('/circuits')
 def circuits():
-    return render_template('circuits.html', active='circuits')
+    # organizing data as {duration : source-file, name}
+    circuits = {
+                    "Un jour" :
+                        [
+                            ("media/documents/excursion-pangalanes-reine-tina-1.pdf",
+                                "Excursion sur les Pangalanes")
+                        ],
+                    "Deux jours, une nuit" :
+                        [
+                             ("media/documents/croisiere-east-coast-tapakala.pdf",
+                                "Croisière East Coast Tapakala"),
+                             ("media/documents/croisiere-varecia.pdf",
+                                "Croisière Varecia"),
+                             ("media/documents/croisiere-macaco.pdf",
+                                "Croisière Macaco")
+                        ],
+                    "Trois jours, deux nuits" :
+                        [
+                             ("media/documents/croisiere-indri-indri.pdf",
+                                "Croisière Indri Indri"),
+                             ("media/documents/croisiere-vohibola.pdf",
+                                "Croisière Vohibola")
+                        ],
+                    "Quattre jours, trois nuits" :
+                        [
+                             ("media/documents/croisiere-vohibola-4j-3n.pdf",
+                                "Croisière Vohibola"),
+                             ("media/documents/croisiere-aye-aye.pdf",
+                                "Croisière Aye Aye"),
+                             ("media/documents/croisiere-vatomandry.pdf",
+                                "Croisière Vatomandry")
+                        ]
+                    }
+    return render_template('circuits.html',
+                            active='circuits',
+                            circuits=circuits)
 
 @app.route('/contact')
 def contact():

@@ -43,6 +43,19 @@ h4.justifiy {
     text-justify: inter-word;
 }
 
+h5.italic {
+    font-style: italic;
+}
+
+h5.center{
+    text-align: center;
+}
+
+h5.justifiy {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 h3.italic {
     font-style: italic;
 }

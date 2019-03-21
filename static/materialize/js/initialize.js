@@ -30,3 +30,8 @@ $('.carousel.carousel-slider').carousel({
 $(document).ready(function(){
    $('.materialboxed').materialbox();
  });
+
+// initialize collapsible lists
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});
