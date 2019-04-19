@@ -65,9 +65,7 @@ def presentation():
 def pangalanes():
     images = ["media/images/pangalanes/pangalanes_1.jpg",
               "media/images/pangalanes/pangalanes_2.jpg",
-              "media/images/pangalanes/pangalanes_3.jpg",
-              "media/images/pangalanes/pangalanes_4.jpg",
-              "media/images/pangalanes/pangalanes_5.jpg"]
+              "media/images/pangalanes/pangalanes_3.jpg",]
     return render_template('presentation/pangalanes.html',
             active='presentation', images=images)
 
