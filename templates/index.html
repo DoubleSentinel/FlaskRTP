@@ -47,10 +47,10 @@
               </a>
             </li>
 
-            <li class="{{ 'active' if active=='media' }}">
+            <li class="{{ 'active' if active=='gallery' }}">
               <a class='dropdown-trigger'
                  data-target='media-nav-dropdown'
-                 href="#!">Médias
+                 href="#!">Gallerie
                  <i class="material-icons right">arrow_drop_down</i>
               </a>
             </li>
@@ -92,7 +92,7 @@
 
           <!-- Dropdown for contacts on navbar -->
           <ul id="contact-nav-dropdown" class="dropdown-content">
-            <li><a href="{{ url_for('agency') }}">Agence de Voyage</a></li>
+            <li><a href="{{ url_for('agency') }}">Conditions générales</a></li>
             <li class="divider"></li>
             <li><a href="{{ url_for('booking') }}">Reservations</a></li>
             <li class="divider"></li>
@@ -112,10 +112,10 @@
          </a>
        </li>
 
-       <li class="{{ 'active' if active=='media' }}">
+       <li class="{{ 'active' if active=='gallery' }}">
          <a class='dropdown-trigger'
             data-target='media-mob-dropdown'
-            href="#!">Médias
+            href="#!">Gallerie
             <i class="material-icons right">arrow_drop_down</i>
          </a>
        </li>
@@ -150,7 +150,7 @@
 
     <!-- Dropdown for contacts on mobile -->
     <ul id="contact-mob-dropdown" class="dropdown-content">
-      <li><a href="{{ url_for('agency') }}">Agence de Voyage</a></li>
+      <li><a href="{{ url_for('agency') }}">Conditions générales</a></li>
       <li><a href="{{ url_for('booking') }}">Reservations</a></li>
       <li><a href="{{ url_for('access') }}">Plan d'accès</a></li>
     </ul>
