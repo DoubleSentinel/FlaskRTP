@@ -2,27 +2,23 @@
 {% block content %}
 
 <div class="row container">
-  <div class="col s12 m12 l12 card green darken-3">
-      <div class="card-content white-text">
-        <span class="card-title">
-          <h3 class="header white-text italic center">
-            Le Reine Tina dans la Presse
-          </h3>
-        </span>
+  <div class="col s12 m12 l12">
+    <h3 class="header grey-text text-darken-3 center">
+      Le Reine Tina dans la Presse
+    </h3>
+  </div>
+  <div class="col s12 m12 l12">
+    <div class="card">
+      <div class="card-image">
+        <img class="materialboxed" src="{{ url_for('static', filename='media/images/presse1.jpg') }}">
+      </div>
+      <div class="card-content green darken-3 white-text">
+         <p class="justify">
+            Fluvial n°269, février 2017
+         </p>
       </div>
     </div>
-    <div class="col s12 m12 l12">
-      <div class="card">
-        <div class="card-image">
-          <img class="materialboxed" src="{{ url_for('static', filename='media/images/presse1.jpg') }}">
-        </div>
-        <div class="card-content green darken-3 white-text">
-           <p class="justify">
-              Fluvial n°267, novembre 2016
-           </p>
-        </div>
-      </div>
-    </div>
+  </div>
 </div>
 
 {% endblock %}

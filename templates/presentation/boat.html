@@ -2,35 +2,46 @@
 {% block content %}
 {% set card_layout = 'col s12 m6 l3' %}
 <div class="container">
-  <div class="row">
-     <div class="card">
-       <div class="card-image">
-         <img class="materialboxed" src="{{ url_for('static', filename='media/images/IMG_0301.jpg') }}">
+   <div class="card">
+     <div class="card-image">
+       <img class="materialboxed" src="{{ url_for('static', filename='media/images/IMG_0301.jpg') }}">
+     </div>
+     <div class="card-content center row white grey-text text-darken-3">
+       <div class="col s12 m12 l6">
+         <h4>Fiche technique</h4>
+         <ul>
+           <li>Longueur : 20 m</li>
+           <li class="divider"></li>
+           <li>Largeur : 4 m</li>
+           <li class="divider"></li>
+           <li>Tirant d’eau : 0,4 m</li>
+           <li class="divider"></li>
+           <li>Tirant d’air : 4.6 m</li>
+           <li class="divider"></li>
+           <li>Poids : env. 16 tonnes</li>
+           <li class="divider"></li>
+           <li>Moteurs : 2 hors-bords Honda 75cv essence à hélices</li>
+           <li class="divider"></li>
+           <li>Génératrice SDMO diesel 6 kWh 220v/380v</li>
+           <li class="divider"></li>
+           <li>4 batteries de service 220 amp. avec convertisseur et panneaux solaires</li>
+         </ul>
        </div>
-       <div class="card-content center row green darken-3 white-text">
-         <div class="col s12 m1 l3 hide-on-small-and-down">
+       <div class="col s12 m12 l6">
+         <div class="video-container">
+           <video class="responsive-video" autoplay muted controls>
+             <source src="{{ url_for('static', filename='media/videos/rtp-main-page.mov') }}"
+             type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
          </div>
-         <div class="col s12 m10 l6">
-           <h4>Fiche technique</h4>
-           <ul>
-             <li>Longueur : 20 m</li>
-             <li class="divider"></li>
-             <li>Largeur : 4 m</li>
-             <li class="divider"></li>
-             <li>Tirant d’eau : 0,4 m</li>
-             <li class="divider"></li>
-             <li>Tirant d’air : 4.6 m</li>
-             <li class="divider"></li>
-             <li>Poids : env. 16 tonnes</li>
-             <li class="divider"></li>
-             <li>Moteurs : 2 hors-bords Honda 75cv essence à hélices</li>
-             <li class="divider"></li>
-             <li>Génératrice SDMO diesel 6 kWh 220v/380v</li>
-             <li class="divider"></li>
-             <li>4 batteries de service 220 amp. avec convertisseur et panneaux solaires</li>
-           </ul>
-         </div>
-         <div class="col s12 m1 l3 hide-on-small-and-down">
+       </div>
+       <div class="col s12 m12 l12">
+         <div class="row">
+           <img class="col s3 m3 s3 materialboxed" src="{{ url_for('static', filename='media/images/boat/length.png') }}">
+           <img class="col s3 m3 s3 materialboxed" src="{{ url_for('static', filename='media/images/boat/roof.png') }}">
+           <img class="col s3 m3 s3 materialboxed" src="{{ url_for('static', filename='media/images/boat/master.png') }}">
+           <img class="col s3 m3 s3 materialboxed" src="{{ url_for('static', filename='media/images/boat/intermediate.png') }}">
          </div>
        </div>
      </div>
@@ -84,7 +95,7 @@
            <img class="materialboxed" src="{{ url_for('static', filename='media/images/boat/dscn1114.jpg') }}">
          </div>
          <div class="card-content green darken-3 white-text">
-           <p class="justify">Coin repas avec grande table pour 10 personnes</p>
+           <p class="justify">Grande table pour 10 personnes</p>
          </div>
        </div>
      </div>
