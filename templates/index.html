@@ -47,13 +47,13 @@
               </a>
             </li>
 
-            <li class="{{ 'active' if active=='gallery' }}">
+            <!-- <li class="{{ 'active' if active=='gallery' }}">
               <a class='dropdown-trigger'
                  data-target='media-nav-dropdown'
                  href="#!">Gallerie
                  <i class="material-icons right">arrow_drop_down</i>
               </a>
-            </li>
+            </li> -->
 
             <li class="{{ 'active' if active=='contact' }}">
               <a class='dropdown-trigger'
@@ -68,8 +68,8 @@
           <ul class="right hide-on-med-and-down">
             <li class="{{ 'active' if active=='circuits' }}">
               <a href="{{ url_for('circuits') }}">Circuits & Croisières</a></li>
-            <li class="{{ 'active' if active=='events' }}">
-              <a href="{{ url_for('events') }}">Événements</a></li>
+            <!-- <li class="{{ 'active' if active=='events' }}">
+              <a href="{{ url_for('events') }}">Événements</a></li> -->
           </ul>
 
           <!-- Dropdown for presentation on navbar -->
@@ -82,21 +82,21 @@
           </ul>
 
           <!-- Dropdown for media on navbar -->
-          <ul id="media-nav-dropdown" class="dropdown-content">
+          <!-- <ul id="media-nav-dropdown" class="dropdown-content">
             <li><a href="{{ url_for('videos') }}">Vidéos</a></li>
             <li class="divider"></li>
             <li><a href="{{ url_for('images') }}">Photos</a></li>
             <li class="divider"></li>
             <li><a href="{{ url_for('press') }}">Presse</a></li>
-          </ul>
+          </ul> -->
 
           <!-- Dropdown for contacts on navbar -->
           <ul id="contact-nav-dropdown" class="dropdown-content">
             <li><a href="{{ url_for('agency') }}">Conditions générales</a></li>
             <li class="divider"></li>
-            <li><a href="{{ url_for('booking') }}">Reservations</a></li>
+            <!-- <li><a href="{{ url_for('booking') }}">Reservations</a></li>
             <li class="divider"></li>
-            <li><a href="{{ url_for('access') }}">Plan d'accès</a></li>
+            <li><a href="{{ url_for('access') }}">Plan d'accès</a></li> -->
           </ul>
         </div>
       </nav>
@@ -112,13 +112,13 @@
          </a>
        </li>
 
-       <li class="{{ 'active' if active=='gallery' }}">
+       <!-- <li class="{{ 'active' if active=='gallery' }}">
          <a class='dropdown-trigger'
             data-target='media-mob-dropdown'
             href="#!">Gallerie
             <i class="material-icons right">arrow_drop_down</i>
          </a>
-       </li>
+       </li> -->
 
        <li class="{{ 'active' if active=='contact' }}">
          <a class='dropdown-trigger'
@@ -130,8 +130,8 @@
 
       <li class="{{ 'active' if active=='circuits' }}">
         <a href="{{ url_for('circuits') }}">Circuits & Croisières</a></li>
-      <li class="{{ 'active' if active=='events' }}">
-        <a href="{{ url_for('events') }}">Événements</a></li>
+      <!-- <li class="{{ 'active' if active=='events' }}">
+        <a href="{{ url_for('events') }}">Événements</a></li> -->
       </ul>
 
     <!-- Dropdown for presentation on mobile -->
@@ -151,8 +151,8 @@
     <!-- Dropdown for contacts on mobile -->
     <ul id="contact-mob-dropdown" class="dropdown-content">
       <li><a href="{{ url_for('agency') }}">Conditions générales</a></li>
-      <li><a href="{{ url_for('booking') }}">Reservations</a></li>
-      <li><a href="{{ url_for('access') }}">Plan d'accès</a></li>
+      <!-- <li><a href="{{ url_for('booking') }}">Reservations</a></li>
+      <li><a href="{{ url_for('access') }}">Plan d'accès</a></li> -->
     </ul>
 <!-- Page Content -->
     {% block content %}
