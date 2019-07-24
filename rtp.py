@@ -155,7 +155,7 @@ def send_email(form=None):
     # Create secure connection with server and send email
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(config.smtpserver, config.smtpport, conext=context) as server:
-        server.login(sender_email, "1234")
+        server.login(sender_email, config.password)
         server.sendmail(
             sender_email, receiver_email, message.as_string()
         )
