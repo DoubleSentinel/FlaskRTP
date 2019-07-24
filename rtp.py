@@ -41,22 +41,6 @@ def circuits():
                             active='circuits',
                             circuits=circuits)
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html', active='contact')
-
-@app.route('/contact/Conditions')
-def agency():
-    return render_template('contact/conditions.html', active='contact')
-
-@app.route('/contact/booking')
-def booking():
-    return render_template('contact/booking.html', active='contact')
-
-@app.route('/contact/access')
-def access():
-    return render_template('contact/access.html', active='contact')
-
 @app.route('/presentation')
 def presentation():
     return render_template('presentation.html', active='presentation')
@@ -118,3 +102,60 @@ def events():
 @app.route('/')
 def index():
     return render_template('home.html', active='none')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', active='contact')
+
+@app.route('/contact/conditions')
+def agency():
+    return render_template('contact/conditions.html', active='contact')
+
+@app.route('/contact/booking', methods=['GET', 'POST'])
+def booking():
+    if request.method == 'POST':
+        status = ''
+        #try:
+        send_email(request.form)
+        #except:
+        #    status = ''
+        return render_template('contact/booking.html',
+                active='contact', status=status)
+    else:
+        return render_template('contact/booking.html', active='contact')
+
+@app.route('/contact/access')
+def access():
+    return render_template('contact/access.html', active='contact')
+
+def send_email(form=None):
+    import smtplib, ssl, config
+    from email.mime.text import MIMEText
+    from email.mime.multipart import MIMEMultipart
+
+    sender_email = config.smtpuser
+    receiver_email = config.targetmail #mia's email
+    #password = input("Type your password and press enter:")
+
+    message = MIMEMultipart("alternative")
+    message["Subject"] = form['subject']
+    message["From"] = sender_email
+    message["To"] = receiver_email
+    message["Cc"] = form['email']
+
+    # Turn these into plain/html MIMEText objects
+    part1 = MIMEText(form['message'], "plain")
+    # part2 = MIMEText(html, "html")
+
+    # Add HTML/plain-text parts to MIMEMultipart message
+    # The email client will try to render the last part first
+    message.attach(part1)
+    # message.attach(part2)
+
+    # Create secure connection with server and send email
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL(config.smtpserver, config.smtpport, conext=context) as server:
+        server.login(sender_email, "1234")
+        server.sendmail(
+            sender_email, receiver_email, message.as_string()
+        )

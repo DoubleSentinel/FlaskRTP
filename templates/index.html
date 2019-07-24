@@ -94,8 +94,8 @@
           <ul id="contact-nav-dropdown" class="dropdown-content">
             <li><a href="{{ url_for('agency') }}">Conditions générales</a></li>
             <li class="divider"></li>
-            <!-- <li><a href="{{ url_for('booking') }}">Reservations</a></li>
-            <li class="divider"></li>
+            <li><a href="{{ url_for('booking') }}">Reservations</a></li>
+            <!-- <li class="divider"></li>
             <li><a href="{{ url_for('access') }}">Plan d'accès</a></li> -->
           </ul>
         </div>
@@ -151,8 +151,8 @@
     <!-- Dropdown for contacts on mobile -->
     <ul id="contact-mob-dropdown" class="dropdown-content">
       <li><a href="{{ url_for('agency') }}">Conditions générales</a></li>
-      <!-- <li><a href="{{ url_for('booking') }}">Reservations</a></li>
-      <li><a href="{{ url_for('access') }}">Plan d'accès</a></li> -->
+      <li><a href="{{ url_for('booking') }}">Reservations</a></li>
+      <!--<li><a href="{{ url_for('access') }}">Plan d'accès</a></li> -->
     </ul>
 <!-- Page Content -->
     {% block content %}
@@ -189,7 +189,9 @@
         </div>
         <div class="footer-copyright">
           <div class="container">
-            © 2019 ChrisMiaTours
+            <p class="grey-text text-lighten-4 left">
+              © 2019 ChrisMiaTours
+            </p>
             <p class="grey-text text-lighten-4 right">
               Website developed by
               <a target="_blank" href="http://www.karimluy.ch">Karim Luy</a>
