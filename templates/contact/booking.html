@@ -12,17 +12,17 @@
     <div class="divider"></div>
     <form class="col s12" method="post" action="{{ url_for('booking') }}">
       <div class="row">
-        <div class="input-field col s4">
+        <div class="input-field col s12 m4 l4">
           <i class="material-icons prefix">account_circle</i>
           <input id="full_name" name="full_name" type="text" class="validate">
           <label for="full_name">Nom et Prénom</label>
         </div>
-        <div class="input-field col s4">
+        <div class="input-field col s12 m4 l4">
           <i class="material-icons prefix">email</i>
           <input id="email" name="email" type="email" class="validate">
           <label for="email">E-mail</label>
         </div>
-        <div class="input-field col s4">
+        <div class="input-field col s12 m4 l4">
           <i class="material-icons prefix">phone</i>
           <input id="telephone" name="telephone" type="tel" class="validate">
           <label for="telephone">Téléphone</label>
@@ -42,7 +42,7 @@
           </label>
         </div>
       </div>
-      <div class="row">
+      <!--<div class="row">
         <div class="col s3 offset-s5">
           <button class="btn waves-effect waves-light green darken-3"
                   type="submit"
@@ -51,7 +51,7 @@
             <i class="material-icons right">send</i>
           </button>
         </div>
-      </div>
+	</div>--!>
     </form>
   </div>
 </div>
