@@ -61,20 +61,14 @@ def boat():
 def goldbook():
     pages = [
         ("media/images/goldbook/page1.jpg", "", ""),
-        ("media/images/goldbook/page2.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page3.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page4.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page5.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page6.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page7.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page8.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page9.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page10.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page11.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page12.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page13.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page14.jpg", "titre", "descriptif"),
-        ("media/images/goldbook/page15.jpg", "titre", "descriptif")
+        ("media/images/goldbook/page2.jpg", "", ""),
+        ("media/images/goldbook/page3.jpg", "", ""),
+        ("media/images/goldbook/page5.jpg", "", ""),
+        ("media/images/goldbook/page7.jpg", "", ""),
+        ("media/images/goldbook/page8.jpg", "", ""),
+        ("media/images/goldbook/page13.jpg", "", ""),
+        ("media/images/goldbook/page14.jpg", "", ""),
+        ("media/images/goldbook/page15.jpg", "", "")
         ]
     return render_template('presentation/goldbook.html',
             active='presentation', goldbook=pages)
@@ -135,7 +129,6 @@ def send_email(form=None):
 
     sender_email = config.smtpuser
     receiver_email = config.targetmail #mia's email
-    #password = input("Type your password and press enter:")
 
     message = MIMEMultipart("alternative")
     message["Subject"] = form['subject']
@@ -143,19 +136,14 @@ def send_email(form=None):
     message["To"] = receiver_email
     message["Cc"] = form['email']
 
-    # Turn these into plain/html MIMEText objects
-    part1 = MIMEText(form['message'], "plain")
-    # part2 = MIMEText(html, "html")
-
     # Add HTML/plain-text parts to MIMEMultipart message
     # The email client will try to render the last part first
-    message.attach(part1)
-    # message.attach(part2)
+    message.attach(MIMEText(form['message'], "plain"))
 
     # Create secure connection with server and send email
     context = ssl.create_default_context()
-    with smtplib.SMTP_SSL(config.smtpserver, config.smtpport, conext=context) as server:
-        server.login(sender_email, config.password)
-        server.sendmail(
-            sender_email, receiver_email, message.as_string()
-        )
+    server = smtplib.SMTP(config.smtpserver, config.smtpport)
+    server.starttls(context=context)
+    server.login(sender_email, config.smtppassword)
+    #print(message.as_string())
+    server.sendmail(sender_email, receiver_email, message.as_string())
