@@ -33,8 +33,8 @@ def circuits():
                 "Croisière Vohibola"),
              ("media/documents/croisiere-aye-aye.pdf",
                 "Croisière Aye Aye"),
-        ]
-    "Six jours, cinque nuits"
+        ],
+     "Six jours, cinque nuits" :
         [
             ("media/documents/croisiere-vatomandry.pdf",
                "Croisière Vatomandry")
