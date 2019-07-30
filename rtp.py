@@ -8,8 +8,8 @@ def circuits():
     circuits = {
     "Un jour" :
         [
-            ("media/documents/excursion-pangalanes-reine-tina-1.pdf",
-                "Excursion sur les Pangalanes")
+            ("media/documents/excursion-palmeraie.pdf",
+                "Excursion à la Palmeraie")
         ],
     "Deux jours, une nuit" :
         [
@@ -33,8 +33,11 @@ def circuits():
                 "Croisière Vohibola"),
              ("media/documents/croisiere-aye-aye.pdf",
                 "Croisière Aye Aye"),
-             ("media/documents/croisiere-vatomandry.pdf",
-                "Croisière Vatomandry")
+        ]
+    "Six jours, cinque nuits"
+        [
+            ("media/documents/croisiere-vatomandry.pdf",
+               "Croisière Vatomandry")
         ]
     }
     return render_template('circuits.html',
