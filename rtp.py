@@ -27,14 +27,14 @@ def circuits():
              ("media/documents/croisiere-vohibola.pdf",
                 "Croisière Vohibola")
         ],
-    "Quattre jours, trois nuits" :
+    "Quatre jours, trois nuits" :
         [
              ("media/documents/croisiere-vohibola-4j-3n.pdf",
                 "Croisière Vohibola"),
              ("media/documents/croisiere-aye-aye.pdf",
                 "Croisière Aye Aye"),
         ],
-     "Six jours, cinque nuits" :
+     "Six jours, cinq nuits" :
         [
             ("media/documents/croisiere-vatomandry.pdf",
                "Croisière Vatomandry")
