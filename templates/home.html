@@ -1,8 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
-
-<div class="section white">
-  <div class="row container">
+<div class="container">
+  <div class="section white">
     <h3 class="header grey-text text-darken-3 center">
       Bienvenue sur «Le Reine Tina»
     </h3>
@@ -10,102 +9,94 @@
       L'unique bateau de croisière sur le canal des Pangalanes, Madagascar
     </h4>
   </div>
-</div>
 
-<div class="parallax-container large">
-    <div class="parallax">
-      <img src="{{ url_for('static', filename='media/images/IMG_0209-parallax.JPG') }}">
-    </div>
-</div>
+  <img class="responsive-img"
+       src="{{ url_for('static', filename='media/images/home/home_1_parallax.jpg') }}">
 
-<div class="section white">
-  <div class="row container">
-    <div class="col s12 m12 l6">
-      <h4 class="header">
-        Visiter en douceur
-      </h4>
-      <p class="flow-text grey-text text-darken-3 lighten-3   justify">
-        L’unique hôtel flottant du canal des Pangalanes. Bateau confortable pour huit passagers.
-      </p>
-    </div>
-    <div class="col s12 m12 l6">
-      <div class="video-container">
-        <video class="responsive-video" autoplay muted controls>
-          <source src="{{ url_for('static', filename='media/videos/rtd-drone-air-mad.mp4') }}"
-          type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+  <div class="section white">
+    <div class="row">
+      <div class="col s12 m12 l6">
+        <h4 class="header">
+          Visiter en douceur
+        </h4>
+        <p class="flow-text grey-text text-darken-3 lighten-3 justify">
+          L’unique hôtel flottant du canal des Pangalanes. Bateau confortable pour huit passagers.
+        </p>
+      </div>
+      <div class="col s12 m12 l6">
+        <div class="video-container">
+          <video class="responsive-video" autoplay muted controls>
+            <source src="{{ url_for('static', filename='media/videos/rtd-drone-air-mad.mp4') }}"
+            type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="parallax-container large">
-    <div class="parallax">
-      <img src="{{ url_for('static', filename='media/images/IMG_9205-parallax.JPG') }}">
-    </div>
-</div>
+  <img class="responsive-img"
+       src="{{ url_for('static', filename='media/images/home/home_2_parallax.jpg') }}">
 
-<div class="section white">
-  <div class="row container">
-    <div class="col s12 m12 l6">
-      <p class="flow-text grey-text text-darken-3 lighten-3 justify">
-          La meilleure manière de visiter les Pangalanes est le bateau.
-          Le seul en service actuellement , terminé, s’y prête admirablement.
-          Conçu à la mesure des lieux, offrant à ses huit passagers l’intimité de ses cabines,
-          la convivialité de repas soignés et la proximité avec une population indigène
-          vivant de ses propres ressources.
-      </p>
-      <p class="flow-text grey-text text-darken-3 lighten-3 justify">
-          La cuisinière du bord maîtrise non seulement la gastronomie malgache
-          mais également l’art français de la table, vouant un soin particulier
-          aux produits locaux et à leur mise en valeur. La seule vision du canal
-          et de ses rives suffirait à enchanter le passager. Mais le décor offre
-          bien d’autres attraits: baignade rafraichissantes, parties de pêche,
-          spectacles de danses villageoises, chorales improvisées, marchés artisanaux,
-          visites de plantations… et l’odeur des épices séchant au soleil.
-      </p>
-    </div>
-    <div class="col s12 m12 l6">
-      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7736976.184663011!2d42.37362193873448!3d-18.761557540517675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21d1a4e3ea238545%3A0x5244e3c1977b1388!2sMadagascar!5e0!3m2!1sen!2sch!4v1552569791434"
-              width="auto"
-              height="600"
-              frameborder="0"
-              style="border:0">
-      </iframe>-->
-      <img class="responsive-img" src="{{url_for('static', filename='media/images/pang-mada-map.jpeg')}}"/>
+  <div class="section white">
+    <div class="row">
+      <div class="col s12 m12 l6">
+        <p class="flow-text grey-text text-darken-3 lighten-3 justify">
+            La meilleure manière de visiter les Pangalanes est le bateau.
+            Le seul en service actuellement , terminé, s’y prête admirablement.
+            Conçu à la mesure des lieux, offrant à ses huit passagers l’intimité de ses cabines,
+            la convivialité de repas soignés et la proximité avec une population indigène
+            vivant de ses propres ressources.
+        </p>
+        <p class="flow-text grey-text text-darken-3 lighten-3 justify">
+            La cuisinière du bord maîtrise non seulement la gastronomie malgache
+            mais également l’art français de la table, vouant un soin particulier
+            aux produits locaux et à leur mise en valeur. La seule vision du canal
+            et de ses rives suffirait à enchanter le passager. Mais le décor offre
+            bien d’autres attraits: baignade rafraichissantes, parties de pêche,
+            spectacles de danses villageoises, chorales improvisées, marchés artisanaux,
+            visites de plantations… et l’odeur des épices séchant au soleil.
+        </p>
+      </div>
+      <div class="col s12 m12 l6">
+        <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7736976.184663011!2d42.37362193873448!3d-18.761557540517675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21d1a4e3ea238545%3A0x5244e3c1977b1388!2sMadagascar!5e0!3m2!1sen!2sch!4v1552569791434"
+                width="auto"
+                height="600"
+                frameborder="0"
+                style="border:0">
+        </iframe>-->
+        <img class="responsive-img" src="{{url_for('static', filename='media/images/pang-mada-map.jpeg')}}"/>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="parallax-container large">
-    <div class="parallax">
-      <img src="{{ url_for('static', filename='media/images/IMG_9347-parallax.JPG') }}">
-    </div>
-</div>
+  <img class="responsive-img"
+       src="{{ url_for('static', filename='media/images/home/home_3_parallax.jpg') }}">
 
-<div class="section white">
-  <div class="row container">
-    <div class="col s12 m12 l6">
-      <p class="flow-text grey-text text-darken-3 lighten-3 justify">
-          La végétation est spécialement luxuriante sur la côte orientale de Madagascar
-          bordant le canal.
-          Des réserves naturelles recèlent de rares endémismes ( lémuriens, tortues, caméléons…)
-          Elles peuvent être visitées et des guides compétents sont à disposition.
-      </p>
-      <p class="flow-text grey-text text-darken-3 lighten-3 justify">
-          L’océan Indien n’est parfois distant que de quelques dizaines de mètres,
-          élargissant soudain l’horizon et offrant la possibilité de belles balades
-          le long d’un rivage intact.
-      </p>
-    </div>
-    <div class="col s12 m12 l6">
-      <div class="video-container">
-        <video class="responsive-video" autoplay muted controls>
-          <source src="{{ url_for('static', filename='media/videos/rtp-main-page.mov') }}"
-          type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+
+  <div class="section white">
+    <div class="row">
+      <div class="col s12 m12 l6">
+        <p class="flow-text grey-text text-darken-3 lighten-3 justify">
+            La végétation est spécialement luxuriante sur la côte orientale de Madagascar
+            bordant le canal.
+            Des réserves naturelles recèlent de rares endémismes ( lémuriens, tortues, caméléons…)
+            Elles peuvent être visitées et des guides compétents sont à disposition.
+        </p>
+        <p class="flow-text grey-text text-darken-3 lighten-3 justify">
+            L’océan Indien n’est parfois distant que de quelques dizaines de mètres,
+            élargissant soudain l’horizon et offrant la possibilité de belles balades
+            le long d’un rivage intact.
+        </p>
+      </div>
+      <div class="col s12 m12 l6">
+        <div class="video-container">
+          <video class="responsive-video" autoplay muted controls>
+            <source src="{{ url_for('static', filename='media/videos/rtp-main-page.mov') }}"
+            type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   </div>

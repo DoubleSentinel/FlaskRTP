@@ -30,7 +30,10 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper green darken-3">
-          <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+          </a>
+          
           <a class="brand-logo center" href="{{ url_for('index') }}">
               <img class="responsive-img"
                    src="{{ url_for('static', filename='media/images/logo-plaquette-.jpg') }}"
@@ -154,7 +157,8 @@
       <li><a href="{{ url_for('booking') }}">Reservations</a></li>
       <!--<li><a href="{{ url_for('access') }}">Plan d'accès</a></li> -->
     </ul>
-<!-- Page Content -->
+
+    <!-- Page Content -->
     {% block content %}
     <!-- content from other template-->
     {% endblock %}
