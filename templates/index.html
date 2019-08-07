@@ -33,7 +33,7 @@
           <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
-          
+
           <a class="brand-logo center" href="{{ url_for('index') }}">
               <img class="responsive-img"
                    src="{{ url_for('static', filename='media/images/logo-plaquette-.jpg') }}"
@@ -43,7 +43,7 @@
           <!-- left side -->
           <ul class="left hide-on-med-and-down">
             <li class="{{ 'active' if active=='presentation' }}">
-              <a class='dropdown-trigger'
+              <a class='dropdown-trigger z-depth-2'
                  data-target='pres-nav-dropdown'
                  href="#!">Présentation
                  <i class="material-icons right">arrow_drop_down</i>
@@ -59,7 +59,7 @@
             </li> -->
 
             <li class="{{ 'active' if active=='contact' }}">
-              <a class='dropdown-trigger'
+              <a class='dropdown-trigger z-depth-2'
                  data-target='contact-nav-dropdown'
                  href="#!">Contacts & Reservations
                  <i class="material-icons right">arrow_drop_down</i>
@@ -70,7 +70,11 @@
           <!-- right side -->
           <ul class="right hide-on-med-and-down">
             <li class="{{ 'active' if active=='circuits' }}">
-              <a href="{{ url_for('circuits') }}">Circuits & Croisières</a></li>
+              <a class="z-depth-2"
+                 href="{{ url_for('circuits') }}">
+                 Circuits & Croisières
+              </a>
+            </li>
             <!-- <li class="{{ 'active' if active=='events' }}">
               <a href="{{ url_for('events') }}">Événements</a></li> -->
           </ul>
