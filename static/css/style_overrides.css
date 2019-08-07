@@ -4,6 +4,16 @@
   background-color: #23782E !important;
 }
 
+.container {
+  max-width: 3456px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .card-title.contoured{
   text-shadow:
     -2px -2px 1px #000,
