@@ -67,7 +67,7 @@ def boat():
         ("media/images/boat/boat_6.JPG","Salle de bain privative (WC, douche, et lavabo)"),
         ("media/images/boat/boat_7.JPG","L'energie électrique est 100% verte grâce au panneau solaires"),
         ("media/images/boat/boat_8.JPG","Quatre membres d'équipage (Chef cuisinière, capitaine, stewards)"),
-    ]
+        ]
     return render_template('presentation/boat.html',
             active='presentation', features=features)
 
