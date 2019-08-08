@@ -100,6 +100,14 @@ h3.contoured{
     2px 2px 1px #000;
 }
 
+h3.contoured-white{
+  text-shadow:
+    -2px -2px 1px #fff,
+    2px -2px 1px #fff,
+    -2px 2px 1px #fff,
+    2px 2px 1px #fff;
+}
+
 p.italic {
     font-style: italic;
 }

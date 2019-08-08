@@ -3,7 +3,7 @@
 <div style="background-image: url({{ url_for('static', filename='media/images/circuits/bg_img.jpg') }}); min-height: 100%; background-position: center; background-size: cover;">
   <div class="container">
     {% for duration, cruise in circuits.items() %}
-      <h3 class="header green-text italic contoured background-image">{{ duration }}</h3>
+      <h3 class="header green-text italic contoured-white background-image">{{ duration }}</h3>
       <ul class="collapsible">
       {% for instance in cruise %}
         <li>
