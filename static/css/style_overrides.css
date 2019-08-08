@@ -22,6 +22,10 @@
     2px 2px 1px #000;
 }
 
+.card-title.medium-text{
+  font-size: 16px;
+}
+
 .carousel {
 height: 500px;
 }
