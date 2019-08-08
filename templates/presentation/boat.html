@@ -47,15 +47,15 @@
      </div>
    </div>
    <div class="row">
-     {% for feature in features %}
+     {% for file, caption in features %}
      <div class="{{ card_layout }}">
        <div class="card">
          <div class="card-image">
            <img class="materialboxed"
-                data-caption="{{ feature[1] }}"
-                src="{{ url_for('static', filename=feature[0]) }}">
+                data-caption="{{ caption }}"
+                src="{{ url_for('static', filename=file) }}">
            <span class="card-title justify contoured medium-text">
-             {{ feature[1] }}
+             {{ caption }}
            </span>
          </div>
        </div>
