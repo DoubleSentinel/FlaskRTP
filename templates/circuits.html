@@ -1,23 +1,25 @@
 {% extends "index.html" %}
 {% block content %}
-<div class="container">
-  {% for duration, cruise in circuits.items() %}
-    <h3 class="header green-text italic">{{ duration }}</h3>
-    <ul class="collapsible">
-    {% for instance in cruise %}
-      <li>
-        <div class="collapsible-header">
-          <h5 class="header italic">{{ instance[1] }}</h5>
-        </div>
-        <div class="collapsible-body">
-          <a class="waves-effect waves-light btn-large green darken-3"
-             href="{{ url_for('static', filename=instance[0] ) }}"
-             target="_blank">Télécharger le PDF</a>
-        </div>
-      </li>
+<div style="background-image: url({{ url_for('static', filename='media/images/circuits/bg_img.jpg') }}); min-height: 100%; background-position: center; background-size: cover;">
+  <div class="container">
+    {% for duration, cruise in circuits.items() %}
+      <h3 class="header green-text italic contoured background-image">{{ duration }}</h3>
+      <ul class="collapsible">
+      {% for instance in cruise %}
+        <li>
+          <div class="collapsible-header">
+            <h5 class="header italic">{{ instance[1] }}</h5>
+          </div>
+          <div class="collapsible-body">
+            <a class="waves-effect waves-light btn-large green darken-3"
+               href="{{ url_for('static', filename=instance[0] ) }}"
+               target="_blank">Télécharger le PDF</a>
+          </div>
+        </li>
+      {% endfor %}
+      </ul>
+      <div class="divider"></div>
     {% endfor %}
-    </ul>
-    <div class="divider"></div>
-  {% endfor %}
+  </div>
 </div>
 {% endblock %}

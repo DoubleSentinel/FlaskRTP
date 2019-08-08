@@ -87,6 +87,19 @@ h3.justifiy {
     text-justify: inter-word;
 }
 
+h3.background-image {
+  margin: 0rem 0 0 0;
+  padding: 2rem 0 1.168rem 0
+}
+
+h3.contoured{
+  text-shadow:
+    -2px -2px 1px #000,
+    2px -2px 1px #000,
+    -2px 2px 1px #000,
+    2px 2px 1px #000;
+}
+
 p.italic {
     font-style: italic;
 }
