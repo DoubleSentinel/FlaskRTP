@@ -36,14 +36,6 @@
            </video>
          </div>
        </div>
-       <!--<div class="col s12 m12 l12">
-         <div class="row">
-           <img class="col s3 m3 s3 materialboxed" src="{{ url_for('static', filename='media/images/boat/length.png') }}">
-           <img class="col s3 m3 s3 materialboxed" src="{{ url_for('static', filename='media/images/boat/roof.png') }}">
-           <img class="col s3 m3 s3 materialboxed" src="{{ url_for('static', filename='media/images/boat/master.png') }}">
-           <img class="col s3 m3 s3 materialboxed" src="{{ url_for('static', filename='media/images/boat/intermediate.png') }}">
-         </div>
-       </div>-->
      </div>
    </div>
    <div class="row">
@@ -54,10 +46,11 @@
            <img class="materialboxed"
                 data-caption="{{ caption }}"
                 src="{{ url_for('static', filename=file) }}">
-           <span class="card-title justify contoured medium-text">
-             {{ caption }}
            </span>
          </div>
+         <div class="card-content green darken-3 white-text">
+          <p class="justify">{{ caption }}</p>
+        </div>
        </div>
      </div>
      {% endfor %}
