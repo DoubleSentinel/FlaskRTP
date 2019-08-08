@@ -63,15 +63,15 @@ def boat():
 @app.route('/presentation/goldbook')
 def goldbook():
     pages = [
-        ("media/images/goldbook/page1.jpg", "", ""),
-        ("media/images/goldbook/page2.jpg", "", ""),
-        ("media/images/goldbook/page3.jpg", "", ""),
-        ("media/images/goldbook/page5.jpg", "", ""),
-        ("media/images/goldbook/page7.jpg", "", ""),
-        ("media/images/goldbook/page8.jpg", "", ""),
-        ("media/images/goldbook/page13.jpg", "", ""),
-        ("media/images/goldbook/page14.jpg", "", ""),
-        ("media/images/goldbook/page15.jpg", "", "")
+        ("media/images/goldbook/page1.jpg", "Septembre 2016"),
+        ("media/images/goldbook/page2.jpg", "Septembre 2016"),
+        ("media/images/goldbook/page3.jpg", "Septembre 2016"),
+        ("media/images/goldbook/page5.jpg", "Octobre 2016"),
+        ("media/images/goldbook/page7.jpg", "Octobre 2016"),
+        ("media/images/goldbook/page8.jpg", "Octobre 2016"),
+        ("media/images/goldbook/page13.jpg", "Octobre 2016"),
+        ("media/images/goldbook/page14.jpg", "Octobre 2016"),
+        ("media/images/goldbook/page15.jpg", "Octobre 2016")
         ]
     return render_template('presentation/goldbook.html',
             active='presentation', goldbook=pages)
