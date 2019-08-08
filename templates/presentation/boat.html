@@ -47,96 +47,20 @@
      </div>
    </div>
    <div class="row">
+     {% for feature in features %}
      <div class="{{ card_layout }}">
        <div class="card">
          <div class="card-image">
            <img class="materialboxed"
-                data-caption="Salon détente à l'avant du bateau"
-                height="200"
-                src="{{ url_for('static', filename='media/images/boat/boat_1.JPG') }}">
-           <span class="card-title justify contoured medium-text">Salon détente à l'avant du bateau</span>
+                data-caption="{{ feature[1] }}"
+                src="{{ url_for('static', filename=feature[0]) }}">
+           <span class="card-title justify contoured medium-text">
+             {{ feature[1] }}
+           </span>
          </div>
        </div>
      </div>
-     <div class="{{ card_layout }}">
-       <div class="card">
-         <div class="card-image">
-           <img class="materialboxed"
-                data-caption="Table d'hôte pour 10 convives"
-                height="200"
-                src="{{ url_for('static', filename='media/images/boat/boat_2.JPG') }}">
-           <span class="card-title justify contoured medium-text">Table d'hôte pour 10 convives</span>
-         </div>
-       </div>
-     </div>
-     <div class="{{ card_layout }}">
-       <div class="card">
-         <div class="card-image">
-           <img class="materialboxed"
-                data-caption="Bar sur le pont à l'arrière du bateau"
-                height="200"
-                src="{{ url_for('static', filename='media/images/boat/boat_3.JPG') }}">
-           <span class="card-title justify contoured medium-text">Bar sur le pont à l'arrière du bateau</span>
-         </div>
-       </div>
-     </div>
-     <div class="{{ card_layout }}">
-       <div class="card">
-         <div class="card-image">
-           <img class="materialboxed"
-                data-caption="Cuisine avec réchaud à gaz, réfrigérateur, et congélateur"
-                height="200"
-                src="{{ url_for('static', filename='media/images/boat/boat_4.JPG') }}">
-           <span class="card-title justify contoured medium-text">Cuisine avec réchaud à gaz, réfrigérateur, et congélateur</span>
-         </div>
-       </div>
-     </div>
-   </div>
-   <div class="row">
-     <div class="{{ card_layout }}">
-       <div class="card">
-         <div class="card-image">
-           <img class="materialboxed"
-                data-caption="Cabine tout confort avec lit double et rangements"
-                height="200"
-                src="{{ url_for('static', filename='media/images/boat/boat_5.JPG') }}">
-           <span class="card-title justify contoured medium-text">Cabine tout confort avec lit double et rangements</span>
-         </div>
-       </div>
-     </div>
-     <div class="{{ card_layout }}">
-       <div class="card">
-         <div class="card-image">
-           <img class="materialboxed"
-                data-caption="Salle de bain privative (WC, douche, et lavabo)"
-                height="200"
-                src="{{ url_for('static', filename='media/images/boat/boat_6_resized.JPG') }}">
-           <span class="card-title justify contoured medium-text">Salle de bain privative (WC, douche, et lavabo)</span>
-         </div>
-       </div>
-     </div>
-     <div class="{{ card_layout }}">
-       <div class="card">
-         <div class="card-image">
-           <img class="materialboxed"
-                data-caption="L'energie électrique est 100% verte grâce au panneau solaires"
-                height="200"
-                src="{{ url_for('static', filename='media/images/boat/boat_7.JPG') }}">
-           <span class="card-title justify contoured medium-text">L'energie électrique est 100% verte grâce au panneau solaires</span>
-         </div>
-       </div>
-     </div>
-     <div class="{{ card_layout }}">
-       <div class="card">
-         <div class="card-image">
-           <img class="materialboxed"
-                data-caption="Quatre membres d'équipage (Chef cuisinière, capitaine, stewards)"
-                height="200"
-                src="{{ url_for('static', filename='media/images/boat/boat_8.JPG') }}">
-           <span class="card-title justify contoured medium-text">Quatre membres d'équipage (Chef cuisinière, capitaine, stewards)</span>
-         </div>
-       </div>
-     </div>
+     {% endfor %}
    </div>
 </div>
 

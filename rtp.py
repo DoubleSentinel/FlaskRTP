@@ -58,20 +58,31 @@ def pangalanes():
 
 @app.route('/presentation/boat')
 def boat():
-    return render_template('presentation/boat.html', active='presentation')
+    features = [
+        ("media/images/boat/boat_1.JPG","Salon détente à l'avant du bateau"),
+        ("media/images/boat/boat_2.JPG","Table d'hôte pour 10 convives"),
+        ("media/images/boat/boat_3.JPG","Bar sur le pont à l'arrière du bateau"),
+        ("media/images/boat/boat_4.JPG","Cuisine avec réchaud à gaz, réfrigérateur, et congélateur"),
+        ("media/images/boat/boat_5.JPG","Cabine tout confort avec lit double et rangements"),
+        ("media/images/boat/boat_6.JPG","Salle de bain privative (WC, douche, et lavabo)"),
+        ("media/images/boat/boat_7.JPG","L'energie électrique est 100% verte grâce au panneau solaires"),
+        ("media/images/boat/boat_8.JPG","Quatre membres d'équipage (Chef cuisinière, capitaine, stewards)"),
+    ]
+    return render_template('presentation/boat.html',
+            active='presentation', features=features)
 
 @app.route('/presentation/goldbook')
 def goldbook():
     pages = [
-        ("media/images/goldbook/page1.jpg", "Septembre 2016"),
-        ("media/images/goldbook/page2.jpg", "Septembre 2016"),
-        ("media/images/goldbook/page3.jpg", "Septembre 2016"),
-        ("media/images/goldbook/page5.jpg", "Octobre 2016"),
-        ("media/images/goldbook/page7.jpg", "Octobre 2016"),
-        ("media/images/goldbook/page8.jpg", "Octobre 2016"),
-        ("media/images/goldbook/page13.jpg", "Octobre 2016"),
-        ("media/images/goldbook/page14.jpg", "Octobre 2016"),
-        ("media/images/goldbook/page15.jpg", "Octobre 2016")
+        ("media/images/goldbook/page_1.JPG", "Septembre 2016"),
+        ("media/images/goldbook/page_2.JPG", "Septembre 2016"),
+        ("media/images/goldbook/page_3.JPG", "Septembre 2016"),
+        ("media/images/goldbook/page_4.JPG", "Octobre 2016"),
+        ("media/images/goldbook/page_5.JPG", "Octobre 2016"),
+        ("media/images/goldbook/page_6.JPG", "Octobre 2016"),
+        ("media/images/goldbook/page_7.JPG", "Octobre 2016"),
+        ("media/images/goldbook/page_8.JPG", "Octobre 2016"),
+        ("media/images/goldbook/page_9.JPG", "Octobre 2016")
         ]
     return render_template('presentation/goldbook.html',
             active='presentation', goldbook=pages)

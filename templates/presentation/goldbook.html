@@ -2,22 +2,20 @@
 {% block content %}
 <div class="container">
   <div class="row">
-  {% for i in range(0,goldbook|length) %}
-    {% set (path, content) = goldbook[i] %}
-      <div class="col s12 m4 l3">
-        <div class="card">
-          <div class="card-image">
-            <img class="materialboxed"
-                 height="100%"
-                 src="{{ url_for('static', filename=path) }}">
-          </div>
-          <div class="card-content center green darken-3 white-text">
-            <p>
-            {{ content }}
-            </p>
-          </div>
+  {% for page in goldbook %}
+    <div class="col s12 m4 l3">
+      <div class="card">
+        <div class="card-image">
+          <img class="materialboxed"
+               src="{{ url_for('static', filename=page[0]) }}">
+        </div>
+        <div class="card-content center green darken-3 white-text">
+          <p>
+          {{ page[1] }}
+          </p>
         </div>
       </div>
+    </div>
   {% endfor %}
   </div>
 </div>
