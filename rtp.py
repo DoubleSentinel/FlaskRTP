@@ -141,23 +141,25 @@ def send_email(form=None):
     from email.mime.text import MIMEText
     from email.mime.multipart import MIMEMultipart
 
-    sender_email = config.smtpuser
-    receiver_email = config.targetmail #mia's email
-
     message = MIMEMultipart()
     message["Subject"] = form['subject']
-    message["From"] = sender_email
-    message["To"] = receiver_email
-    message["Cc"] = form['email']
+    message["From"] = config.smtpuser
+    message["To"] = ",".join([config.targetmail, form['email']] + config.ccmails)
+    message["Cc"] = ",".join([form['email']] + config.ccmails)
 
-    # Add HTML/plain-text parts to MIMEMultipart message
-    # The email client will try to render the last part first
-    message.attach(MIMEText(form['message'], "plain"))
+    contents_list = ["Email généré automatiquement pour ",
+                    form['full_name'],
+                    " (",
+                    form['telephone'],
+                    "). ",
+                    "Ne répondez pas s'il vous plaît.\n\n",
+                    form['message']]
+    message.attach(MIMEText(''.join(contents_list), "plain"))
 
     # Create secure connection with server and send email
     context = ssl.create_default_context()
     server = smtplib.SMTP(config.smtpserver, config.smtpport)
     server.starttls(context=context)
-    server.login(sender_email, config.smtppassword)
-    
-    server.sendmail(sender_email, receiver_email, message.as_string())
+    server.login(config.smtpuser, config.smtppassword)
+
+    server.sendmail(config.smtpuser, config.targetmail, message.as_string())
