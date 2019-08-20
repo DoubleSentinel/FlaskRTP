@@ -144,7 +144,7 @@ def send_email(form=None):
     sender_email = config.smtpuser
     receiver_email = config.targetmail #mia's email
 
-    message = MIMEMultipart("alternative")
+    message = MIMEMultipart()
     message["Subject"] = form['subject']
     message["From"] = sender_email
     message["To"] = receiver_email
@@ -159,5 +159,5 @@ def send_email(form=None):
     server = smtplib.SMTP(config.smtpserver, config.smtpport)
     server.starttls(context=context)
     server.login(sender_email, config.smtppassword)
-    #print(message.as_string())
+    
     server.sendmail(sender_email, receiver_email, message.as_string())
