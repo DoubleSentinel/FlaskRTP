@@ -64,8 +64,8 @@ def boat():
         ("media/images/boat/boat_3.JPG","Bar sur le pont à l'arrière du bateau"),
         ("media/images/boat/boat_4.JPG","Cuisine avec réchaud à gaz, réfrigérateur, et congélateur"),
         ("media/images/boat/boat_5.JPG","Cabine tout confort avec lit double et rangements"),
-        ("media/images/boat/boat_6.JPG","Salle de bain privative (WC, douche, et lavabo)"),
-        ("media/images/boat/boat_7.JPG","L'energie électrique est 100% verte grâce au panneau solaires"),
+        ("media/images/boat/boat_6.JPG","Salle de bain privatif (WC, douche, et lavabo)"),
+        ("media/images/boat/boat_7.JPG","L'énergie électrique est 100% vert grâce aux panneaux solaires"),
         ("media/images/boat/boat_8.JPG","Quatre membres d'équipage (Chef cuisinière, capitaine, stewards)"),
         ]
     return render_template('presentation/boat.html',
