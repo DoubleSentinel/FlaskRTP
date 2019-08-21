@@ -161,5 +161,9 @@ def send_email(form=None):
     server = smtplib.SMTP(config.smtpserver, config.smtpport)
     server.starttls(context=context)
     server.login(config.smtpuser, config.smtppassword)
-
-    server.sendmail(config.smtpuser, config.targetmail, message.as_string())
+    print([config.targetmail, form['email']] + config.ccmails)
+    server.sendmail(config.smtpuser,
+                 [config.targetmail, form['email']]
+                 + config.ccmails,
+                 message.as_string())
+    server.quit()
