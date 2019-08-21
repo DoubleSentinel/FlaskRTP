@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+{% block content %}
+<div style="background-image: url({{ url_for('static', filename='media/images/circuits/bg_img.jpg') }}); min-height: 100%; background-position: center; background-size: cover;">
+  <div class="row container">
+    <div class="col s12 m12 l12">
+      <h3 class="header green-text center contoured-white background-image">
+        Le Reine Tina dans la Presse
+      </h3>
+    </div>
+    <div class="col s12 m12 l12">
+      {% for filetype, article in articles.items() %}
+        <h3 class="header green-text contoured-white italic">
+          {{ filetype }}
+        </h3>
+        {% if filetype == 'Images' %}
+          {% for instance in article %}
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header">
+                <h5 class="header italic">{{ instance[1] }}</h5>
+              </div>
+              <div class="collapsible-body">
+                <img class="responsive-img materialboxed center z-depth-3"
+                     src="{{ url_for('static', filename=instance[0] ) }}">
+              </div>
+            </li>
+          </ul>
+          {% endfor %}
+        {% else %}
+          {% for instance in article %}
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header">
+                <h5 class="header italic">{{ instance[1] }}</h5>
+              </div>
+              <div class="collapsible-body">
+                <a class="waves-effect waves-light btn-large green darken-3"
+                   href="{{ url_for('static', filename=instance[0] ) }}"
+                   target="_blank">Télécharger le PDF</a>
+              </div>
+            </li>
+          </ul>
+          {% endfor %}
+        {% endif %}
+        <div class="divider"></div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
