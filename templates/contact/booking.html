@@ -1,6 +1,11 @@
 {% extends "index.html" %}
 {% block content %}
 <div class="container">
+  {% if status is defined %}
+  <script>
+    M.toast({html: '{{ status }}'})
+  </script>
+  {% endif %}
   <div class="row">
     <h3 class="header grey-text text-darken-3 center">
       Réservation

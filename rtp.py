@@ -123,10 +123,11 @@ def agency():
 def booking():
     if request.method == 'POST':
         status = ''
-        #try:
-        send_email(request.form)
-        #except:
-        #    status = ''
+        try:
+            send_email(request.form)
+            status = "Email envoyée avec succès!"
+        except:
+            status = "Une érreur c'est produit lors de l'envoie de l'e-mail. Veuillez contacter Chrismiatours directement si vous voyez ce message."
         return render_template('contact/booking.html',
                 active='contact', status=status)
     else:
