@@ -81,8 +81,12 @@
                  Circuits & Croisières
               </a>
             </li>
-            <!-- <li class="{{ 'active' if active=='events' }}">
-              <a href="{{ url_for('events') }}">Événements</a></li> -->
+            <li class="{{ 'active' if active=='press' }}">
+              <a class="z-depth-2"
+                 href="{{ url_for('press') }}">
+                 Presse
+              </a>
+            </li>
           </ul>
 
           <!-- Dropdown for presentation on navbar -->
@@ -147,10 +151,13 @@
        </li>
 
       <li class="{{ 'active' if active=='circuits' }}">
-        <a href="{{ url_for('circuits') }}">Circuits & Croisières</a></li>
-      <!-- <li class="{{ 'active' if active=='events' }}">
-        <a href="{{ url_for('events') }}">Événements</a></li> -->
-      </ul>
+        <a href="{{ url_for('circuits') }}">Circuits & Croisières</a>
+      </li>
+
+      <li class="{{ 'active' if active=='press' }}">
+        <a href="{{ url_for('press') }}">Presse</a>
+      </li>
+    </ul>
 
     <!-- Dropdown for presentation on mobile -->
     <ul id="pres-mob-dropdown" class="dropdown-content">

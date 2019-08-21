@@ -99,13 +99,28 @@ def videos():
 def images():
     return render_template('gallery/images.html', active='gallery')
 
-@app.route('/gallery/press')
+@app.route('/press')
 def press():
-    return render_template('gallery/press.html', active='gallery')
-
-@app.route('/events')
-def events():
-    return render_template('events.html', active='events')
+    # organizing data as {filetype : source-file, name}
+    articles = {
+    "Images" :
+        [
+             ("media/documents/press_1.jpg",
+                "Fluvial n°267 (Novembre 2016)"),
+             ("media/documents/press_2.jpg",
+                "Info Tourisme Madagascar (Juin 2017)"),
+             ("media/documents/press_3.jpg",
+                "Info Tourisme Madagascar (Février 2019)")
+        ],
+    "PDF" :
+        [
+             ("media/documents/press_pdf_1.pdf",
+                "Fluvial n°268 (Janvier 2017)")
+        ]
+    }
+    return render_template('press.html',
+                            active='press',
+                            articles=articles)
 
 @app.route('/')
 def index():
@@ -113,7 +128,7 @@ def index():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html', active='contact')
+    return render_template('contact/booking.html', active='contact')
 
 @app.route('/contact/conditions')
 def agency():
