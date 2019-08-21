@@ -109,7 +109,7 @@ def events():
 
 @app.route('/')
 def index():
-    return render_template('home.html', active='none')
+    return render_template('home.html', active='home')
 
 @app.route('/contact')
 def contact():
