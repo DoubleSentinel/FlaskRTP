@@ -151,14 +151,14 @@ def booking():
         try:
             send_email(request.form)
             if recaptcha.verify():
-                status = "Email envoyée avec succès!"
+                status = "Email envoyé avec succès!"
             else:
                 raise Exception("captcha","Veuillez cliquer sur le captcha au dessus du boutton 'Envoyer'")
         except Exception as e:
             if e.args[0] == 'captcha':
                 status = e.args[1]
             else:
-                status = "Une érreur c'est produit lors de l'envoie de l'e-mail. Veuillez contacter Chrismiatours directement si vous voyez ce message."
+                status = "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez contacter Chrismiatours directement si vous voyez ce message."
         return render_template('contact/booking.html',
                 active='contact', status=status)
     else:
