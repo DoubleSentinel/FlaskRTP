@@ -1,6 +1,16 @@
 from flask import Flask, render_template, request, jsonify
+from flask_recaptcha import ReCaptcha
+import config
 
 app = Flask( __name__ )
+
+app.config.update({
+    "RECAPTCHA_SITE_KEY": config.captchaKey,
+    "RECAPTCHA_SITE_SECRET": config.captchaSecret,
+    "RECAPTCHA_ENABLED": True
+})
+
+recaptcha = ReCaptcha(app=app)
 
 @app.route('/circuits')
 def circuits():
@@ -140,9 +150,15 @@ def booking():
         status = ''
         try:
             send_email(request.form)
-            status = "Email envoyée avec succès!"
-        except:
-            status = "Une érreur c'est produit lors de l'envoie de l'e-mail. Veuillez contacter Chrismiatours directement si vous voyez ce message."
+            if recaptcha.verify():
+                status = "Email envoyée avec succès!"
+            else:
+                raise Exception("captcha","Veuillez cliquer sur le captcha au dessus du boutton 'Envoyer'")
+        except Exception as e:
+            if e.args[0] == 'captcha':
+                status = e.args[1]
+            else:
+                status = "Une érreur c'est produit lors de l'envoie de l'e-mail. Veuillez contacter Chrismiatours directement si vous voyez ce message."
         return render_template('contact/booking.html',
                 active='contact', status=status)
     else:
@@ -153,7 +169,7 @@ def access():
     return render_template('contact/access.html', active='contact')
 
 def send_email(form=None):
-    import smtplib, ssl, config
+    import smtplib, ssl
     from email.mime.text import MIMEText
     from email.mime.multipart import MIMEMultipart
 
