@@ -149,11 +149,11 @@ def booking():
     if request.method == 'POST':
         status = ''
         try:
-            send_email(request.form)
             if recaptcha.verify():
                 status = "Email envoyé avec succès!"
             else:
-                raise Exception("captcha","Veuillez cliquer sur le captcha au dessus du boutton 'Envoyer'")
+                raise Exception("captcha","Veuillez cliquer sur le captcha au dessus
+            send_email(request.form) du boutton 'Envoyer'")
         except Exception as e:
             if e.args[0] == 'captcha':
                 status = e.args[1]
