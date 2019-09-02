@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from flask_recaptcha import ReCaptcha
+import requests
+import json
 import config
 
 app = Flask( __name__ )
@@ -149,11 +151,24 @@ def booking():
     if request.method == 'POST':
         status = ''
         try:
-            if recaptcha.verify():
+            r = requests.post('https://www.google.com/recaptcha/api/siteverify',
+                          data = {'secret' :
+                                  config.captchaKey, 
+                                  'response' :
+                                  request.form['g-recaptcha-response']})
+
+            google_response = json.loads(r.text)
+
+            if google_response['success']:
                 status = "Email envoyé avec succès!"
+                send_email(request.form)
             else:
                 raise Exception("captcha","Veuillez cliquer sur le captcha au dessus du boutton 'Envoyer'")
-            send_email(request.form)
+            #if recaptcha.verify():
+            #    status = "Email envoyé avec succès!"
+            #    send_email(request.form)
+            #else:
+                #raise Exception("captcha","Veuillez cliquer sur le captcha au dessus du boutton 'Envoyer'")
         except Exception as e:
             if e.args[0] == 'captcha':
                 status = e.args[1]
@@ -162,7 +177,7 @@ def booking():
         return render_template('contact/booking.html',
                 active='contact', status=status)
     else:
-        return render_template('contact/booking.html', active='contact')
+        return render_template('contact/booking.html', active='contact', captchaKey=config.captchaKey)
 
 @app.route('/contact/access')
 def access():
