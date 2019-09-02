@@ -153,7 +153,7 @@ def booking():
         try:
             r = requests.post('https://www.google.com/recaptcha/api/siteverify',
                           data = {'secret' :
-                                  config.captchaKey, 
+                                  config.captchaSecret, 
                                   'response' :
                                   request.form['g-recaptcha-response']})
 
@@ -164,11 +164,6 @@ def booking():
                 send_email(request.form)
             else:
                 raise Exception("captcha","Veuillez cliquer sur le captcha au dessus du boutton 'Envoyer'")
-            #if recaptcha.verify():
-            #    status = "Email envoyé avec succès!"
-            #    send_email(request.form)
-            #else:
-                #raise Exception("captcha","Veuillez cliquer sur le captcha au dessus du boutton 'Envoyer'")
         except Exception as e:
             if e.args[0] == 'captcha':
                 status = e.args[1]
@@ -177,7 +172,7 @@ def booking():
         return render_template('contact/booking.html',
                 active='contact', status=status)
     else:
-        return render_template('contact/booking.html', active='contact', captchaKey=config.captchaKey)
+        return render_template('contact/booking.html', active='contact', captchaKey=config.captchaSecret)
 
 @app.route('/contact/access')
 def access():
