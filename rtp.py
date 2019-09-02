@@ -186,7 +186,7 @@ def send_email(form=None):
     message = MIMEMultipart()
     message["Subject"] = form['subject']
     message["From"] = config.smtpuser
-    message["To"] = ",".join([config.targetmail, form['email']] + config.ccmails)
+    message["To"] = config.targetmail
     message["Cc"] = ",".join([form['email']] + config.ccmails)
 
     contents_list = ["Email généré automatiquement pour ",
