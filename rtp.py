@@ -107,13 +107,13 @@ def media():
     for subdir, dirs, files in os.walk("./static/media/images"):
         for file in files:
             if pattern.search(file):
-                print(os.path.join(subdir, file)[1:])
+                # print(os.path.join(subdir, file)[1:])
                 images.append(os.path.join(subdir, file)[1:])
 
     for subdir, dirs, files in os.walk("./static/media/videos"):
         for file in files:
             if pattern.search(file):
-                print(os.path.join(subdir, file)[1:])
+                # print(os.path.join(subdir, file)[1:])
                 videos.append(os.path.join(subdir, file)[1:])
 
     return render_template('media.html',
