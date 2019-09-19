@@ -59,14 +59,6 @@
               </a>
             </li>
 
-            <!-- <li class="{{ 'active' if active=='gallery' }}">
-              <a class='dropdown-trigger'
-                 data-target='media-nav-dropdown'
-                 href="#!">Gallerie
-                 <i class="material-icons right">arrow_drop_down</i>
-              </a>
-            </li> -->
-
             <li class="{{ 'active' if active=='contact' }}">
               <a class='dropdown-trigger z-depth-2'
                  data-target='contact-nav-dropdown'
@@ -90,6 +82,12 @@
                  Presse
               </a>
             </li>
+            <li class="{{ 'active' if active=='media' }}">
+              <a class='z-depth-2'
+                 href="{{ url_for('media') }}">
+                 Médias
+              </a>
+            </li>
           </ul>
 
           <!-- Dropdown for presentation on navbar -->
@@ -101,22 +99,11 @@
             <li><a href="{{ url_for('goldbook') }}">Livre d'or</a></li>
           </ul>
 
-          <!-- Dropdown for media on navbar -->
-          <!-- <ul id="media-nav-dropdown" class="dropdown-content">
-            <li><a href="{{ url_for('videos') }}">Vidéos</a></li>
-            <li class="divider"></li>
-            <li><a href="{{ url_for('images') }}">Photos</a></li>
-            <li class="divider"></li>
-            <li><a href="{{ url_for('press') }}">Presse</a></li>
-          </ul> -->
-
           <!-- Dropdown for contacts on navbar -->
           <ul id="contact-nav-dropdown" class="dropdown-content">
             <li><a href="{{ url_for('agency') }}">Conditions générales</a></li>
             <li class="divider"></li>
             <li><a href="{{ url_for('booking') }}">Réservations</a></li>
-            <!-- <li class="divider"></li>
-            <li><a href="{{ url_for('access') }}">Plan d'accès</a></li> -->
           </ul>
         </div>
         <div class="hide-on-med-and-down">
@@ -145,15 +132,6 @@
            <i class="material-icons right">arrow_drop_down</i>
          </a>
        </li>
-
-       <!-- <li class="{{ 'active' if active=='gallery' }}">
-         <a class='dropdown-trigger'
-            data-target='media-mob-dropdown'
-            href="#!">Gallerie
-            <i class="material-icons right">arrow_drop_down</i>
-         </a>
-       </li> -->
-
        <li class="{{ 'active' if active=='contact' }}">
          <a class='dropdown-trigger'
             data-target='contact-mob-dropdown'
@@ -169,6 +147,10 @@
       <li class="{{ 'active' if active=='press' }}">
         <a href="{{ url_for('press') }}">Presse</a>
       </li>
+
+      <li class="{{ 'active' if active=='media' }}">
+        <a href="{{ url_for('media') }}">Médias</a>
+      </li>
     </ul>
 
     <!-- Dropdown for presentation on mobile -->
@@ -178,18 +160,10 @@
       <li><a href="{{ url_for('goldbook') }}">Livre d'or</a></li>
     </ul>
 
-    <!-- Dropdown for media on mobile -->
-    <ul id="media-mob-dropdown" class="dropdown-content">
-      <li><a href="{{ url_for('videos') }}">Vidéos</a></li>
-      <li><a href="{{ url_for('images') }}">Photos</a></li>
-      <li><a href="{{ url_for('press') }}">Presse</a></li>
-    </ul>
-
     <!-- Dropdown for contacts on mobile -->
     <ul id="contact-mob-dropdown" class="dropdown-content">
       <li><a href="{{ url_for('agency') }}">Conditions générales</a></li>
       <li><a href="{{ url_for('booking') }}">Réservations</a></li>
-      <!--<li><a href="{{ url_for('access') }}">Plan d'accès</a></li> -->
     </ul>
 
     <!-- Page Content -->

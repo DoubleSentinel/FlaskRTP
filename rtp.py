@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from flask_recaptcha import ReCaptcha
-import requests
-import json
+import requests, os, json, re
 import config
 
 app = Flask( __name__ )
@@ -99,17 +98,28 @@ def goldbook():
     return render_template('presentation/goldbook.html',
             active='presentation', goldbook=pages)
 
-@app.route('/gallery')
-def gallery():
-    return render_template('gallery.html', active='gallery')
+@app.route('/media')
+def media():
+    images = []
+    videos = []
+    pattern = re.compile(".(gif|jpg|jpeg|JPG|png|PNG|mov|mp4|MP4)$")
 
-@app.route('/gallery/videos')
-def videos():
-    return render_template('gallery/videos.html', active='gallery')
+    for subdir, dirs, files in os.walk("./static/media/images"):
+        for file in files:
+            if pattern.search(file):
+                print(os.path.join(subdir, file)[1:])
+                images.append(os.path.join(subdir, file)[1:])
 
-@app.route('/gallery/images')
-def images():
-    return render_template('gallery/images.html', active='gallery')
+    for subdir, dirs, files in os.walk("./static/media/videos"):
+        for file in files:
+            if pattern.search(file):
+                print(os.path.join(subdir, file)[1:])
+                videos.append(os.path.join(subdir, file)[1:])
+
+    return render_template('media.html',
+                            active='media',
+                            images=images,
+                            videos=videos)
 
 @app.route('/press')
 def press():
@@ -153,7 +163,7 @@ def booking():
         try:
             r = requests.post('https://www.google.com/recaptcha/api/siteverify',
                           data = {'secret' :
-                                  config.captchaSecret, 
+                                  config.captchaSecret,
                                   'response' :
                                   request.form['g-recaptcha-response']})
 

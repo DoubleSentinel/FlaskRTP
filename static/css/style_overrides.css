@@ -8,6 +8,10 @@
   max-width: 3456px;
 }
 
+.carousel {
+  perspective: 1500px;
+}
+
 .center {
   display: block;
   margin-left: auto;
