@@ -106,7 +106,7 @@ def media():
 
     for subdir, dirs, files in os.walk("./static/media/images"):
         for file in files:
-            if pattern.search(file):
+            if pattern.search(file) and "press" not in subdir and "goldbook" not in subdir:
                 # print(os.path.join(subdir, file)[1:])
                 images.append(os.path.join(subdir, file)[1:])
 
