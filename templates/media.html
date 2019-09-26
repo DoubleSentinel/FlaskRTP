@@ -6,7 +6,9 @@
     <div class="col s12 m12 l12">
       <div class="card">
         <div class="card-content green darken-3 white-text">
-          <span class="card-title center"><h3 class="header">Gallerie</h3></span>
+          <span class="card-title center">
+            <h3 class="header">Photos</h3>
+          </span>
           <div class="carousel">
             {% for image in images  %}
             <a class="carousel-item" href="{{ image }}"><img src="{{ image }}"></a>
@@ -16,6 +18,7 @@
       </div>
     </div>
     <div class="col s12 m12 l12">
+      <h3 class="header center">Vidéos</h3>
       <div class="row">
         {% for video in videos %}
         <div class="col s12 m6 l3" style="margin: 5px 0px 5px 0px;">

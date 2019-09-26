@@ -104,9 +104,9 @@ def media():
     videos = []
     pattern = re.compile(".(gif|jpg|jpeg|JPG|png|PNG|mov|mp4|MP4)$")
 
-    for subdir, dirs, files in os.walk("./static/media/images"):
+    for subdir, dirs, files in os.walk("./static/media/images/gallery"):
         for file in files:
-            if pattern.search(file) and "press" not in subdir and "goldbook" not in subdir:
+            if pattern.search(file):
                 # print(os.path.join(subdir, file)[1:])
                 images.append(os.path.join(subdir, file)[1:])
 
