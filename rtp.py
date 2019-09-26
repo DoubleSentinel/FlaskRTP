@@ -115,7 +115,6 @@ def media():
             if pattern.search(file):
                 # print(os.path.join(subdir, file)[1:])
                 videos.append(os.path.join(subdir, file)[1:])
-
     return render_template('media.html',
                             active='media',
                             images=images,
