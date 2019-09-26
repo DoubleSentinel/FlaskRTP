@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from flask_recaptcha import ReCaptcha
+from PIL import Image
 import requests, os, json, re
 import config
 
@@ -104,11 +105,14 @@ def media():
     videos = []
     pattern = re.compile(".(gif|jpg|jpeg|JPG|png|PNG|mov|mp4|MP4)$")
 
-    for subdir, dirs, files in os.walk("./static/media/images/gallery"):
+    for subdir, dirs, files in os.walk("./static/media/images/"):
         for file in files:
             if pattern.search(file):
-                # print(os.path.join(subdir, file)[1:])
-                images.append(os.path.join(subdir, file)[1:])
+                path = os.path.join(subdir, file)
+                im = Image.open(path)
+                width, height = im.size
+                if width > height:
+                    images.append(path[1:])
 
     for subdir, dirs, files in os.walk("./static/media/videos"):
         for file in files:
