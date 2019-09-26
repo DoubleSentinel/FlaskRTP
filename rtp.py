@@ -105,7 +105,7 @@ def media():
     videos = []
     pattern = re.compile(".(gif|jpg|jpeg|JPG|png|PNG|mov|mp4|MP4)$")
 
-    for subdir, dirs, files in os.walk("./static/media/images/"):
+    for subdir, dirs, files in os.walk("./static/media/images/gallery"):
         for file in files:
             if pattern.search(file):
                 path = os.path.join(subdir, file)
