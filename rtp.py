@@ -175,7 +175,9 @@ def press():
     "PDF" :
         [
              ("media/documents/press_pdf_1.pdf",
-                "Fluvial n°268 (Janvier 2017)")
+                "Fluvial n°268 (Janvier 2017)"),
+             ("media/documents/fluvial_316.pdf",
+                "Fluvial n°316 (Octobre 2021)")
         ]
     }
     return render_template('press.html',
