@@ -233,29 +233,37 @@ def send_email(form=None):
     from email.mime.text import MIMEText
     from email.mime.multipart import MIMEMultipart
 
-    message = MIMEMultipart()
-    message["Subject"] = form['subject']
-    message["From"] = config.smtpuser
-    message["To"] = config.targetmail
-    message["Cc"] = ",".join([form['email']] + config.ccmails)
+    blacklist = []
+    with open("blacklist") as file:
+        for line in file.readlines():
+            mail = line.split()
+            if len(mail)>0:
+                blacklist.append(mail[0])
 
-    contents_list = ["Email généré automatiquement pour ",
-                    form['full_name'],
-                    " (",
-                    form['telephone'],
-                    "). ",
-                    "Ne répondez pas s'il vous plaît.\n\n",
-                    form['message']]
-    message.attach(MIMEText(''.join(contents_list), "plain"))
+    if form['email'] not in blacklist:
+        message = MIMEMultipart()
+        message["Subject"] = form['subject']
+        message["From"] = config.smtpuser
+        message["To"] = config.targetmail
+        message["Cc"] = ",".join([form['email']] + config.ccmails)
 
-    # Create secure connection with server and send email
-    context = ssl.create_default_context()
-    server = smtplib.SMTP(config.smtpserver, config.smtpport)
-    server.starttls(context=context)
-    server.login(config.smtpuser, config.smtppassword)
-    print([config.targetmail, form['email']] + config.ccmails)
-    server.sendmail(config.smtpuser,
-                 [config.targetmail, form['email']]
-                 + config.ccmails,
-                 message.as_string())
-    server.quit()
+        contents_list = ["Email généré automatiquement pour ",
+                        form['full_name'],
+                        " (",
+                        form['telephone'],
+                        "). ",
+                        "Ne répondez pas s'il vous plaît.\n\n",
+                        form['message']]
+        message.attach(MIMEText(''.join(contents_list), "plain"))
+
+        # Create secure connection with server and send email
+        context = ssl.create_default_context()
+        server = smtplib.SMTP(config.smtpserver, config.smtpport)
+        server.starttls(context=context)
+        server.login(config.smtpuser, config.smtppassword)
+        print([config.targetmail, form['email']] + config.ccmails)
+        server.sendmail(config.smtpuser,
+                     [config.targetmail, form['email']]
+                     + config.ccmails,
+                     message.as_string())
+        server.quit()
